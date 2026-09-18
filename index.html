@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Is Muse safe? Secure VM, Sentinel, approvals, and the honest caveats — what Meta's safety architecture does and doesn't promise." />
+  <link rel="canonical" href="https://hannahm87780.github.io/Muse_Explained/guide/is-muse-safe/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Is Muse Safe? — Muse Explained" />
+  <meta property="og:description" content="Secure VM, Sentinel, approvals, and the honest caveats — what the architecture does and doesn't promise." />
+  <meta property="og:url" content="https://hannahm87780.github.io/Muse_Explained/guide/is-muse-safe/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>Is Muse Safe? — Muse Explained</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Is Muse Safe?",
+    "author": {"@type": "Organization", "name": "Muse Explained"},
+    "datePublished": "2026-09-18",
+    "dateModified": "2026-09-18",
+    "description": "What Meta's safety architecture for Muse does and doesn't promise, explained independently."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Muse safe to use?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Muse has a serious safety architecture — an isolated Secure VM, a Sentinel system controlling network access, approval prompts for sensitive actions, and credential storage the agent can't see. The honest caveat: Meta acknowledges it could technically access the Secure VM, with a fully user-controlled Confidential VM planned."}
+      },
+      {
+        "@type": "Question",
+        "name": "Can Muse see my passwords?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. Credentials go into secure storage that the agent itself cannot see. It works with stand-in tokens, and real credentials are inserted at the network boundary only after an action is authorized."}
+      },
+      {
+        "@type": "Question",
+        "name": "Does Meta use my Muse conversations for ads or training?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Meta says Muse data is not shared with its advertising systems, and users can opt out of having interactions used to train Meta's AI models."}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Safety</p>
+        <h1>Is Muse Safe?</h1>
+        <p class="lede">The safety architecture is the most thought-through part of the product — and the part where Meta's history makes people (reasonably) skeptical. Here's both sides, straight.</p>
+        <p class="updated">Last checked against the live product: September 18, 2026.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+          <p>Handing an AI agent your email, calendar, and payment info is a bigger ask than anything Meta has made of consumers before. Meta knows it — and to their credit, the safety design of Muse is more serious than the usual "trust us" page. It's also not the whole story. Let's take it layer by layer.</p>
+
+          <h2>Layer 1: The Secure VM</h2>
+          <p>Muse runs inside an isolated, persistent Linux virtual machine — Meta calls it the <strong>Secure VM</strong> — that holds its browser, storage, and working memory. The idea: the agent's activity happens in a contained box, with trusted data kept away from the open internet and from the parts of the system that act on your behalf.</p>
+          <p>In practice this means a compromised website or a malicious instruction can't easily reach outside the box. It's a meaningful architectural choice, not a marketing label.</p>
+
+          <h2>Layer 2: Sentinel, the gatekeeper</h2>
+          <p>A separate system called <strong>Sentinel</strong> controls everything leaving the VM. Every network request is checked against the policies you've set: allowed, denied, or escalated to you for a decision. If Sentinel can't match an action to an existing approval, you get a notification asking what to do.</p>
+          <p>The clever part is credential handling. The agent <strong>never sees your real passwords or tokens</strong> — it works with stand-in tokens, and Sentinel swaps in the real credential at the network boundary only after the request is authorized. Even if something tricked the agent into revealing "its" credentials, there'd be nothing real to reveal.</p>
+
+          <h2>Layer 3: You, the approver</h2>
+          <p>Before sensitive actions — sending an email, making a purchase — Muse asks. You can allow once, for the task, for a site, or always for a connector, or deny. Permission defaults live in Settings, including an always-ask posture. Everything is recorded in an <strong>Activity log</strong>, and some actions can be undone or stopped mid-flight. (Sent emails can't — same as sending them yourself.)</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>In two weeks of real use, the approval flow caught exactly one thing I cared about: Muse tried to confirm a purchase at a price higher than the one we'd discussed, and the prompt made me look twice. That's the system working as designed — not preventing disaster, just inserting a moment of attention where it counts.</p>
+          </div>
+
+          <h2>Layer 4: Data boundaries</h2>
+          <p>Meta states that Muse data is <strong>not shared with its advertising systems</strong>, and you can <strong>opt out of having your interactions used to train</strong> its AI models. Purchases go through Stripe's Link wallet with one-time-use card numbers, so merchants — and the agent — never see your real card. You can disconnect any service anytime and ask Muse to forget specific interactions.</p>
+
+          <h2>The honest caveats</h2>
+          <p>Now the other side, because an independent publication owes you that:</p>
+          <ul>
+            <li><strong>Meta could technically look inside the Secure VM.</strong> Company policy forbids it, but Meta's own engineering leadership has acknowledged it's technically possible (reported by WIRED at launch). A <strong>Confidential VM</strong> — encrypted with a key only you hold — is planned for later this year. Until it ships, this runs on policy, not math.</li>
+            <li><strong>It's Meta.</strong> The company asking for your email, calendar, health, and financial connections is the company of Cambridge Analytica and a long regulatory rap sheet. The architecture is genuinely good; the trust question is genuinely open. Both things are true.</li>
+            <li><strong>Approvals only work if you read them.</strong> Approval fatigue is real, and a reflexive "allow" habit silently dismantles the whole system. Start with narrow permissions and widen on evidence.</li>
+            <li><strong>Disconnecting isn't forgetting.</strong> Removing a connector stops future access, but data already used can remain in memory and history. Use the forget/reset controls deliberately.</li>
+          </ul>
+
+          <h2>The practitioner's safety checklist</h2>
+          <ol>
+            <li>Connect one service at a time, only when a task needs it.</li>
+            <li>Keep approvals narrow ("allow once") until a pattern earns wider trust.</li>
+            <li>Read approval prompts — especially amounts, recipients, and unfamiliar sites.</li>
+            <li>Review the Activity log after your first few tasks to learn what normal looks like.</li>
+            <li>Opt out of training-data use if that matters to you; it's your call.</li>
+            <li>Keep credentials out of chat — use the connector flow, which keeps them in secure storage.</li>
+            <li>Know where reset is, before you need it.</li>
+          </ol>
+          <p>None of this is paranoia. It's the same posture you'd take with a talented new assistant who has keys to the office: trust, verify, and keep the important locks on your side of the desk.</p>
+
+          <h2>Quick answers</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Is Muse safe to use?</summary>
+              <p>The architecture — Secure VM, Sentinel, approvals, invisible credential storage — is serious. The caveats: Meta could technically access the current VM (a user-keyed Confidential VM is planned), and approvals only protect you if you read them.</p>
+            </details>
+            <details>
+              <summary>Can Muse see my passwords?</summary>
+              <p>No. Credentials live in secure storage the agent can't see; it works with stand-in tokens that Sentinel replaces at the network boundary after authorization.</p>
+            </details>
+            <details>
+              <summary>Does Meta use my Muse data for ads or AI training?</summary>
+              <p>Meta says Muse data isn't shared with ad systems, and you can opt out of training use. Check the settings in your app for the current controls.</p>
+            </details>
+            <details>
+              <summary>What happens if I disconnect a service?</summary>
+              <p>Future data exchange stops immediately, but information already used may remain in memory and conversation history. Ask Muse to forget specific items, or reset entirely for a clean slate.</p>
+            </details>
+          </div>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../muse-pricing/">← Muse Pricing</a>
+            <a class="next" href="../muse-vs-chatgpt/">Next: Muse vs. ChatGPT →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+
+    <section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there's something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. 'Muse' is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">© 2026 Muse Explained</p>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+</body>
+</html>
