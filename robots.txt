@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hannahm87780.github.io/Muse_Explained/sitemap.xml
+Sitemap: https://museexplained.com/sitemap.xml
