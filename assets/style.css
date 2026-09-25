@@ -348,6 +348,7 @@
   line-height: 1.45;
 }
 .updated { margin: 0; color: var(--muted); font-size: .85rem; }
+.byline { margin: 0 0 4px; font-weight: 600; }
 
 .article { max-width: 780px; }
 .article h2 {
