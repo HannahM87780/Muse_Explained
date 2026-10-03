@@ -1,1 +1,373 @@
-<!doctype html><html><head><title>placeholder</title></head><body>placeholder</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Amazon locked the door on September 20. Insurify followed. Resy said no to bots. Meanwhile Shopify, PayPal, and two insurers rolled out the welcome mat. The running list, updated as it moves." />
+  <link rel="canonical" href="https://museexplained.com/guide/whos-blocking-muse/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Who&#x27;s Blocking Muse: The Merchant-Refusal Tracker — Muse Explained" />
+  <meta property="og:description" content="Amazon locked the door on September 20. Insurify followed. Resy said no to bots. Meanwhile Shopify, PayPal, and two insurers rolled out the welcome mat. The running list, updated as it moves." />
+  <meta property="og:url" content="https://museexplained.com/guide/whos-blocking-muse/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>Who&#x27;s Blocking Muse: The Merchant-Refusal Tracker — Muse Explained</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Who's Blocking Muse: The Merchant-Refusal Tracker",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "description": "Amazon locked the door on September 20. Insurify followed. Resy said no to bots. Meanwhile Shopify, PayPal, and two insurers rolled out the welcome mat. The running list, updated as it moves."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why did Amazon block Muse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Amazon says Meta launched an agent onto its store with no notice and no agreement, that Muse does not identify itself as automated, and that it appears to capture and store customer credentials. Meta declined Amazon's request to voluntarily remove Amazon.com, so Amazon blocked it on September 20, citing its Conditions of Use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the block permanent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unknown. The companies were in \"direct conversation\" as of September 27, with no reported change since."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did Insurify block Muse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two reasons: the agent stripped insurance quotes of coverage context (limits, deductibles, disclosures) that shoppers need to compare fairly, and bot-driven quotes trigger paid data checks that cost carriers money with no real customer behind them. Insurify says it is open to an integration that preserves privacy, security, and consumer choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did Resy refuse AI agents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Resy does not permit unapproved third-party bots or agents on its platform, citing risks to the platform and a fair reservation experience. An Instinct user's agent got his account locked by hammering Resy hundreds of times per hour; Resy does allow authorized AI access through integrations with ChatGPT and Claude."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is welcoming Muse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shopify (Sep 21), PayPal (Sep 22), Instacart (Sep 22), Kin (Sep 30), Sigo Seguros (Oct 1, via an MCP server), and Neptune (Oct 1)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this mean agents are losing the fight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not exactly. The split is about structure, not the concept of agents shopping. Permissioned, announced access (Shopify's checkout, Resy's licensed integrations, insurer MCP servers) is being embraced. The fights are all about agents that arrive unannounced and transact as if they were the user."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Muse still buy things on Amazon for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of October 2, no. The block from September 20 is holding, and users see a popup citing Amazon's Conditions of Use. There is no published timeline for restoration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a block and a refusal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A block is technical (Amazon's popup, Insurify's bot detection). A refusal is policy (Resy telling outlets it does not permit unapproved agents). Some platforms do both. The effect on you is the same, but the fix differs: technical blocks need engineering agreements, policy refusals need business agreements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "If Amazon blocks Muse but builds its own shopping agent, is that hypocrisy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The facts worth knowing: Amazon's \"Buy for Me\" agent listed sellers' goods without consent in January 2026 (Amazon's answer was opt-out by email), while Amazon demands ask-first behavior from Meta. Whether that is hypocrisy or just leverage is for you to judge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What would end the merchant-refusal wave?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The honest answer is that nobody knows, but the candidates are visible: agent-identification standards (the Visa/Mastercard/Ant \"Know Your Agent\" work), permissioned checkout paths (Shopify, Shop Pay, PayPal), and structured agent interfaces (insurer MCP servers) that remove the scraping problem. The wave ends when \"announced and permitted\" is the default, not the exception."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this affect me if I never shop with Muse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly. But every agent will face the same question wherever it transacts, so this tracker is a preview of the rules your next agent will live under."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Field notes</p>
+        <h1>Who&#x27;s Blocking Muse: The Merchant-Refusal Tracker</h1>
+        <p class="lede">Amazon locked the door on September 20. Insurify followed. Resy said no to bots. Meanwhile Shopify, PayPal, and two insurers rolled out the welcome mat. The running list, updated as it moves.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: October 2, 2026.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+
+          <p>An agent that can shop the whole internet can only shop the parts of the internet that let it in. That turned out to be one of the first real limits on Muse: not the model, not the permissions screen, but the checkout button itself. Some of the biggest merchants in America have decided your assistant is not a customer. They are a trespasser.</p>
+          <p>I am keeping this list current. It will change.</p>
+
+          <h2>The running list</h2>
+
+          <p><strong>Blocking or refusing Muse</strong></p>
+          <table>
+            <thead>
+              <tr><th>Who</th><th>What happened</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amazon</td>
+                <td>Blocked Muse from Amazon.com on Sep 20. Amazon says it privately asked Meta to remove Amazon.com first; Meta declined; the technical block went up. Users now see a popup: continued access by an unauthorized AI agent violates Amazon&#x27;s Conditions of Use. Amazon&#x27;s objections: no advance notice or authorization, Muse does not identify itself as an agent while browsing, and it appears to capture and store customer credentials.</td>
+                <td>Holding. GeekWire reported the two companies in &quot;direct conversation&quot; on Sep 27, but no outlet has reported any change since.</td>
+              </tr>
+              <tr>
+                <td>Insurify</td>
+                <td>The online insurance marketplace blocked Muse on Sep 23 (PRNewswire). Its reasons: the agent stripped quotes of coverage context (deductibles, limits, eligibility, state disclosures) and each bot-driven quote triggers paid data checks (driving records, credit-based insurance scores) that cost carriers money with no real shopper. Co-CEO Giorgos Zacharia tested Muse himself and described it scraping around rate caps and bot detection: &quot;Insurify blocked me. I&#x27;m going to keep trying. I&#x27;ll give a report in a couple of hours if I find another way.&quot;</td>
+                <td>Block is a negotiation, not a verdict. Meta&#x27;s spokesperson: &quot;We&#x27;re in touch with Insurify to understand the issue they raised.&quot; Insurify says it is open to an integration with privacy, security, and consumer-choice standards met.</td>
+              </tr>
+              <tr>
+                <td>Resy</td>
+                <td>The reservation platform told CNN it &quot;does not currently permit unapproved third-party bots or agents,&quot; citing risks to the platform and the reservation experience. A separate test (neoteo) had Muse complete a Resy reservation after the user supplied a phone number and confirmation code. Resy does have authorized AI integrations with ChatGPT and Claude.</td>
+                <td>Refusal stands. This is now two outlets plus CNN&#x27;s own test booking, so the corroboration is solid.</td>
+              </tr>
+              <tr>
+                <td>Employers</td>
+                <td>The workers-comp insurer says third-party agents like Muse may not touch its operational systems or customer data. It builds AI applications inside ChatGPT and requires agents to work within its broader AI strategy.</td>
+                <td>Soft no, not a formal technical block.</td>
+              </tr>
+              <tr>
+                <td>AT&amp;T, Nike, Dick&#x27;s</td>
+                <td>Early launch-window reports (via FundaAI) of merchant refusals of AI calls outright: AT&amp;T declined to negotiate, Nike and Dick&#x27;s rejected Link payments.</td>
+                <td>Reported early in launch. Treat as the first row of a category, not a confirmed permanent block.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>Welcoming Muse</strong></p>
+          <table>
+            <thead>
+              <tr><th>Who</th><th>What happened</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Shopify</td>
+                <td>On Sep 21, Shopify opened every store on its platform to Muse with Shop Pay checkout; stock up about 15% over two days. Muse orders carry no extra Shopify fee, but custom pixels do not run in that checkout, so merchants lose their own tracking.</td>
+                <td>Open.</td>
+              </tr>
+              <tr>
+                <td>PayPal</td>
+                <td>On Sep 22, PayPal announced a partnership letting customers shop and check out through Muse across PayPal&#x27;s merchant network, Muse&#x27;s third checkout option after Stripe&#x27;s Link and Shop Pay.</td>
+                <td>Open.</td>
+              </tr>
+              <tr>
+                <td>Instacart</td>
+                <td>Announced Sep 22 (Maplebear via Barron&#x27;s): chat with Muse and turn the conversation into a grocery order without leaving the Muse app. Muse joins ChatGPT, Gemini, and Google AI Search as Instacart &quot;connectors.&quot;</td>
+                <td>Open.</td>
+              </tr>
+              <tr>
+                <td>Kin</td>
+                <td>On Sep 30, the direct-to-consumer home insurer announced it would allow Muse and other AI agents to shop for quotes. CEO Sean Harper: &quot;We&#x27;re not going to block Muse.&quot; The trade press notes BofA&#x27;s read that agents could &quot;put out to market business traditionally gatekept by highly paid human agents.&quot;</td>
+                <td>Open.</td>
+              </tr>
+              <tr>
+                <td>Sigo Seguros</td>
+                <td>On Oct 1, the first personal-auto insurer to ship an MCP server for AI agents: Texas drivers can quote and buy auto insurance through ChatGPT, Grok Bot, and Muse without leaving the agent conversation. Also launched InsuranceMCP.com, a directory of agent-compatible insurer servers.</td>
+                <td>Open, and structurally interesting (see below).</td>
+              </tr>
+              <tr>
+                <td>Neptune</td>
+                <td>On Oct 1, the largest private flood insurer invited consumers to shop flood insurance via Muse.</td>
+                <td>Open.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>This list is reported from press and company statements, not from testing every merchant myself. Block status can change quietly, and a merchant that works today may add detection tomorrow. If you are about to hand Muse a purchase that matters, verify the merchant still accepts it first.</p>
+          </div>
+
+          <h2>The Amazon fight, and why it is the one that matters</h2>
+          <p>The Amazon story is the whole debate in one dispute. It is the biggest retailer, it was the first block, and the sequence of events matters more than the block itself.</p>
+          <p>Amazon did not flip a switch out of nowhere. Reporting (GeekWire, Economic Times, Bloomberg via the syndication layer) reconstructed a 12-day timeline: Amazon privately asked Meta to remove Amazon.com from the Muse experience, Meta declined, and only then did the technical block go up on September 20. That kills the &quot;routine anti-bot filter&quot; theory. It was a negotiation that failed.</p>
+          <p>Amazon&#x27;s case has three legs. First, permission: Meta never told Amazon the agent was coming, and Amazon believes third-party purchasing applications &quot;should operate openly and respect service provider decisions about whether or not to participate.&quot; Second, identity: Muse browses as a standard logged-in user without disclosing it is automated. Third, credentials: The Times carried Amazon&#x27;s sharpest claim, that Muse &quot;captured and stored customer credentials, creating an &#x27;undisclosed third-party&#x27; presence within customer accounts.&quot;</p>
+          <p>There is also money underneath the principle. Amazon generated more than $68 billion in ad revenue last year, a business that depends on shoppers browsing its pages. Agents that handle the trip without the browse starve the model. One widely discussed line from the HN thread on the block: agents optimizing on price and reviews &quot;threaten this revenue model fundamentally.&quot; And Stratechery&#x27;s Friday-wrap theory is the clean version: Muse does not see ads, so the retailer that lives on attention has a structural reason to say no.</p>
+          <p>Amazon&#x27;s legal playbook is worth understanding because every future block will copy it. Amazon sued Perplexity over its Comet browser and won a preliminary injunction in March, then lost it on August 4: the Ninth Circuit ruled that the <em>user</em>, not the AI company, was accessing Amazon&#x27;s computers under federal anti-hacking law. Rehearing was denied September 10. The remaining avenue is contracts and terms of service, which is exactly why the Muse popup cites the <strong>Conditions of Use</strong> rather than hacking. Every future agent block will be a ToS fight, not a hacking fight.</p>
+          <p>And Amazon is not stopping with Meta. TechSpot reported Amazon plans to block Google and OpenAI&#x27;s shopping agents too; the auspia.ai FAQ treats that as done (&quot;Amazon has separately restricted Google and OpenAI shopping agents&quot;). The block is becoming a category policy.</p>
+
+          <h2>The insurance split: the industry arguing with itself</h2>
+          <p>If Amazon is the war&#x27;s biggest battle, insurance is its most instructive front, because the same industry has now given both answers in the same week.</p>
+          <p>Insurify&#x27;s block rests on a real, non-ideological complaint: a stripped quote is not a quote. &quot;A quote without its context is not a fair comparison. It is a number,&quot; Zacharia said, and insurance quotes carry legally required context (coverage limits, deductibles, discounts, eligibility conditions, state-required disclosures) that an agent scraping pages can drop. Then there is the money angle that rarely gets named: each bot-driven quote request can trigger paid data checks, driving records and credit-based insurance scores, whether or not a real shopper is behind the request. Carriers pay for quotes that bring them no customers.</p>
+          <p>Kin answered the opposite way a week later, and its CEO said the quiet part: AI agents are &quot;an important way people shop,&quot; and when an agent can do the work brokers do, &quot;it makes sense that both agencies and carriers with that business model are afraid of customers using AI agents to shop.&quot; Kin is direct-to-consumer; it does not care if the shopper is a browser or a bot.</p>
+          <p>Then Sigo Seguros quietly pointed at the structural fix. Its October 1 move was not just an embrace, it was an MCP server: a structured, agent-compatible quoting interface. That is the technical answer to Insurify&#x27;s stripped-quote complaint. If agents query structured coverage data instead of scraping pages, the context does not get stripped. The industry&#x27;s argument may end up being settled by infrastructure, not policy.</p>
+
+          <h2>The reservation problem: speed limits matter</h2>
+          <p>Resy is the first booking-service refusal on record, and the incident that caused it is the clearest warning about what agent behavior looks like from the other side.</p>
+          <p>A New York venture capitalist asked his Instinct assistant to get a table at 4 Charles Prime Rib, encouraged it to keep trying, and came back to find his Resy account locked out: the agent had been pinging Resy &quot;hundreds of times every hour.&quot; His own verdict: &quot;Of course I got banned. Resy figured it was a bot which is a totally fair response.&quot; His account was reinstated; he says he learned his lesson.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>The Resy incident is the one case on this list where the user&#x27;s own agent got the user punished. Authorization from you does not equal authorization from the platform. That line (from the stableweekly Substack) is the whole section in one sentence: your agent answers to you, but it transacts on somebody else&#x27;s property.</p>
+          </div>
+          <p>Resy now permits authorized AI access through integrations with ChatGPT and Claude, and continues to evaluate others. The pattern to expect: platforms will not ban AI, they will license it, on their terms.</p>
+
+          <h2>The shape of the war</h2>
+          <p>Three things make this more than a running argument between Meta and its enemies.</p>
+          <p><strong>First, there is already a pattern.</strong> The agentconn.com &quot;Agent Access War&quot; piece named the sequence: Comet blocked via court order in March, ChatGPT shopping features in the 2025 holiday season, Muse in September 2026, Google and OpenAI agents named as next. Wikipedia now has a Muse (AI agent) page with a &quot;Blocking by Amazon&quot; section. The block is reference-grade history.</p>
+          <p><strong>Second, Amazon is running two policies at once.</strong> On September 23, Amazon launched its Selling Partner plugin, which lets Claude and Amazon Quick act on seller accounts through an Amazon-run connection, with access limits, seller approval, and audit trails. In the same week it blocked Muse for browsing as a user. Permissioned, announced, revocable access for one company&#x27;s agent; a popup for the other&#x27;s. &quot;One company handled AI agent access in two opposite ways inside a week,&quot; as the stackone coverage put it.</p>
+          <p><strong>Third, the identity infrastructure is being built.</strong> Visa, Mastercard, and Ant International began work in September on a shared &quot;Know Your Agent&quot; framework for agent identity and authorization. Amazon&#x27;s three complaints (announce the agent, identify it, keep logins out of it) read like the opening terms of that deal. The endgame is probably not blocks and popups. It is an identity standard that agents carry with them, and merchants that read it.</p>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>Amazon&#x27;s &quot;Buy for Me&quot; irony deserves a permanent place in the honest version of this story. In January 2026, more than 180 sellers complained that Amazon&#x27;s own agent listed their goods without consent; Amazon&#x27;s answer was opt-out by email, the opposite of the ask-first rule it now demands from Meta. Hold that alongside the block whenever someone tells you the fight is purely about principle.</p>
+          </div>
+
+          <h2>What to watch</h2>
+          <p>I will update this page when any of these move: the Amazon/Meta talks (still in &quot;direct conversation&quot; as of Sep 27, no reported change since), Insurify&#x27;s negotiation with Meta, a third formal retailer block, Resy changing its policy, or movement on the Visa/Mastercard/Ant agent-identity framework. The insurance vertical is the one to watch most closely: the MCP servers are the first real attempt to make agents and merchants compatible by design rather than by ceasefire.</p>
+
+          <p>Muse Explained is an independent guide and is not affiliated with Meta. Nothing here is an endorsement of Muse or of any merchant listed.</p>
+
+          <h2>Quick answers</h2>
+          <div class="faq-list">
+
+            <details>
+              <summary>Why did Amazon block Muse?</summary>
+              <p>Amazon says Meta launched an agent onto its store with no notice and no agreement, that Muse does not identify itself as automated, and that it appears to capture and store customer credentials. Meta declined Amazon&#x27;s request to voluntarily remove Amazon.com, so Amazon blocked it on September 20, citing its Conditions of Use.</p>
+            </details>
+            <details>
+              <summary>Is the block permanent?</summary>
+              <p>Unknown. The companies were in &quot;direct conversation&quot; as of September 27, with no reported change since.</p>
+            </details>
+            <details>
+              <summary>Why did Insurify block Muse?</summary>
+              <p>Two reasons: the agent stripped insurance quotes of coverage context (limits, deductibles, disclosures) that shoppers need to compare fairly, and bot-driven quotes trigger paid data checks that cost carriers money with no real customer behind them. Insurify says it is open to an integration that preserves privacy, security, and consumer choice.</p>
+            </details>
+            <details>
+              <summary>Why did Resy refuse AI agents?</summary>
+              <p>Resy does not permit unapproved third-party bots or agents on its platform, citing risks to the platform and a fair reservation experience. An Instinct user&#x27;s agent got his account locked by hammering Resy hundreds of times per hour; Resy does allow authorized AI access through integrations with ChatGPT and Claude.</p>
+            </details>
+            <details>
+              <summary>Who is welcoming Muse?</summary>
+              <p>Shopify (Sep 21), PayPal (Sep 22), Instacart (Sep 22), Kin (Sep 30), Sigo Seguros (Oct 1, via an MCP server), and Neptune (Oct 1).</p>
+            </details>
+            <details>
+              <summary>Does this mean agents are losing the fight?</summary>
+              <p>Not exactly. The split is about structure, not the concept of agents shopping. Permissioned, announced access (Shopify&#x27;s checkout, Resy&#x27;s licensed integrations, insurer MCP servers) is being embraced. The fights are all about agents that arrive unannounced and transact as if they were the user.</p>
+            </details>
+
+          </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: Can Muse still buy things on Amazon for me?</strong></p>
+          <p>A: As of October 2, no. The block from September 20 is holding, and users see a popup citing Amazon&#x27;s Conditions of Use. There is no published timeline for restoration.</p>
+          <p><strong>Q: What is the difference between a block and a refusal?</strong></p>
+          <p>A: A block is technical (Amazon&#x27;s popup, Insurify&#x27;s bot detection). A refusal is policy (Resy telling outlets it does not permit unapproved agents). Some platforms do both. The effect on you is the same, but the fix differs: technical blocks need engineering agreements, policy refusals need business agreements.</p>
+          <p><strong>Q: If Amazon blocks Muse but builds its own shopping agent, is that hypocrisy?</strong></p>
+          <p>A: The facts worth knowing: Amazon&#x27;s &quot;Buy for Me&quot; agent listed sellers&#x27; goods without consent in January 2026 (Amazon&#x27;s answer was opt-out by email), while Amazon demands ask-first behavior from Meta. Whether that is hypocrisy or just leverage is for you to judge.</p>
+          <p><strong>Q: What would end the merchant-refusal wave?</strong></p>
+          <p>A: The honest answer is that nobody knows, but the candidates are visible: agent-identification standards (the Visa/Mastercard/Ant &quot;Know Your Agent&quot; work), permissioned checkout paths (Shopify, Shop Pay, PayPal), and structured agent interfaces (insurer MCP servers) that remove the scraping problem. The wave ends when &quot;announced and permitted&quot; is the default, not the exception.</p>
+          <p><strong>Q: Does this affect me if I never shop with Muse?</strong></p>
+          <p>A: Not directly. But every agent will face the same question wherever it transacts, so this tracker is a preview of the rules your next agent will live under.</p>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../will-muse-ask-before-it-spends-your-money/">&#8592; Will Muse ask before it spends your money?</a>
+            <a class="next" href="../">The Guide &#8594;</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+
+    <section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9f51b72e2e74d26a96ec4c925913152"}'></script><!-- End Cloudflare Web Analytics --><script src="https://giscus.app/client.js" data-repo="HannahM87780/Muse_Explained" data-repo-id="[ENTER REPO ID HERE]" data-category="[ENTER CATEGORY NAME HERE]" data-category-id="[ENTER CATEGORY ID HERE]" data-mapping="pathname" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script></body>
+</html>
