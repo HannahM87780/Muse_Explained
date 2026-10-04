@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Meta&#x27;s agent hears you well now: its transcription model tops the streaming charts, voice mode and video chat are live, and phone calls are in limited testing. Along the way, a researcher turned Muse into a backdoor and a user downloaded 6.8 GB of its brain. What&#x27;s safe to use today." />
+  <link rel="canonical" href="https://museexplained.com/guide/does-muse-talk-voice-dictation-safety/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Does Muse talk? Voice, dictation, and the two trust tests — Muse Explained" />
+  <meta property="og:description" content="Meta&#x27;s agent hears you well now: its transcription model tops the streaming charts, voice mode and video chat are live, and phone calls are in limited testing. Along the way, a researcher turned Muse into a backdoor and a user downloaded 6.8 GB of its brain. What&#x27;s safe to use today." />
+  <meta property="og:url" content="https://museexplained.com/guide/does-muse-talk-voice-dictation-safety/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>Does Muse talk? Voice, dictation, and the two trust tests — Muse Explained</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Does Muse talk? Voice, dictation, and the two trust tests",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "description": "Meta's agent hears you well now: its transcription model tops the streaming charts, voice mode and video chat are live, and phone calls are in limited testing. A patched dictation flaw and a 6.8 GB export Meta calls a feature are the trust tests."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Muse have voice input?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Muse Voice Transcribe, released September 1, 2026: real-time streaming speech-to-text with 20+ speaker diarization and end-of-speech detection, available through the Meta Model API, Meta AI for Mac, and Muse Code. Independent testing (Artificial Analysis) ranked it first on the streaming transcription leaderboard at 3.1% word error rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Muse hold a voice conversation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta presented Voice Mode at Connect for long conversations while the agent works in the background, and Alexandr Wang demoed live video chat with a customizable voice and avatar on September 24. Custom voice generation is still in internal testing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Muse make phone calls for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is in limited testing. Per Fox News (October 3), some users can ask Muse to call US businesses, with a transcript afterward. No separate pricing has been announced. Meta previously tested human contractors quietly placing some calls and rolled that back after employee privacy objections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was the dictation flaw real?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it was patched in about a day. Researcher Patrick Wardle showed that a Mac app setting could be changed by unprivileged local code to redirect dictated audio to an attacker-controlled server. Meta hot-fixed it on September 22."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download Muse's own files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apparently yes, by design. A researcher exported 6.8 GB of his session's VM filesystem through an ordinary conversation; Meta closed the bug-bounty report as \"Not Applicable\" and later called the export intended behavior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Muse Voice Transcribe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta Superintelligence Labs' real-time audio model, released September 1, 2026: streaming speech-to-text, speaker diarization for 20+ speakers, and end-of-speech detection in one model, re-evaluating audio every 80 milliseconds. Independent testing (Artificial Analysis) ranked it first on the streaming transcription leaderboard at 3.1% word error rate. Pricing is $3 per 1,000 audio minutes, roughly $0.18 an hour, via the Meta Model API. It is speech-to-text only: Meta's own docs say it does not synthesize speech or provide a speech-to-speech API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is voice dictation on Mac safe now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The September 21 flaw (an undocumented dictation-endpoint setting, redirectable by unprivileged local code) was hot-fixed by September 22, per researcher Patrick Wardle's own confirmation. The exploit required code already running on your Mac, and no CVE was assigned. The durable lesson: an agent with broad permissions is a high-value hijack target, so keep the app updated and avoid untrusted scripts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did Meta say the 6.8 GB export was not a bug?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta's position, reported in a September 25 security update, is that exporting your own VM filesystem is intended behavior: a file explorer in the Library tab and Settings > Data controls > Download your agent data do the same. The bug-bounty report was closed as \"Not Applicable.\" What remains unanswered is the scope of the Sentinel's approval policy for outbound data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will a human ever be on my Muse calls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta tested it and rolled it back. Reuters reported contractors quietly placed some Muse calls; after employee privacy objections and a contractor's racist remark on a cable-bill call, a Meta VP called it \"a miss\" and suspended the test. Human callers reportedly hit 95 to 98 percent success versus a lower AI-only rate. Meta says any public release would carry proper disclosures."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Safety</p>
+        <h1>Does Muse talk? Voice, dictation, and the two trust tests</h1>
+        <p class="lede">Meta&#x27;s agent hears you well now: its transcription model tops the streaming charts, voice mode and video chat are live, and phone calls are in limited testing. Along the way, a researcher turned Muse into a backdoor and a user downloaded 6.8 GB of its brain. What&#x27;s safe to use today.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: October 3, 2026..</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+          <p>The voice story runs on three tracks. What shipped: a genuinely best-in-class transcription model, a voice mode, and live video chat with a customizable voice. What broke: a dictation flaw patched in about a day, and a 6.8 GB filesystem export that Meta says is a feature. What&#x27;s pending: phone calls to real businesses, still in limited testing after a human-contractor experiment went sideways. Each track changes what the others mean, so take them in order.</p>
+
+          <h2>The transcription model is the real product here</h2>
+          <p>On September 1, before the Muse agent even launched, Meta Superintelligence Labs released Muse Voice Transcribe: a real-time audio model that combines streaming speech-to-text, speaker diarization for 20+ speakers, and end-of-speech detection in a single model. It re-evaluates its audio buffer every 80 milliseconds and commits to a transcript about 0.16 seconds after a speaker stops talking.</p>
+          <p>The numbers are Meta&#x27;s, the ranking is independent. Artificial Analysis ranked it first on its streaming transcription leaderboard at a 3.1% word error rate. Pricing is $3 per 1,000 audio minutes, roughly $0.18 an hour, which Meta positions at about one-fifth of Google&#x27;s standard rate. It is available through the Meta Model API, Meta AI for Mac, and Muse Code. Meta trained it on more than 70 languages and verified 25 at launch. There is a zero-data-retention tier on the Model API for privacy-sensitive developers.</p>
+          <p>The honest boundary: Meta&#x27;s own docs say it is speech-to-text only. It does not synthesize speech and it does not provide a speech-to-speech conversation API. The model turns audio into text; whatever conversational voice the agent uses is a separate layer on top.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>Voice Transcribe is a developer and API product first, an agent feature second. When coverage says &quot;Meta&#x27;s voice model beats Google,&quot; it means this model, on this benchmark. That is real, and it is narrower than it sounds.</p>
+          </div>
+
+          <h2>Voice Mode, video chat, and the avatar</h2>
+          <p>At Connect, Meta presented Muse Voice Mode: long conversations with the agent while it keeps working in the background. The day after the keynote, chief AI officer Alexandr Wang demoed live video chat on X: you talk to Muse face to face, and you can prompt how it sounds. The research writeup behind it describes Realtime Avatar as an extension of the voice model, generating speech and video from a shared stream so the voice, lip movement, and expression stay synchronized. It can animate a reference image during a live conversation, from a portrait to an illustration.</p>
+          <p>One thing to keep straight: custom voice generation is in internal testing only, per TestingCatalog&#x27;s September 10 report, with no public date. A video call with a face and a custom voice is the demo; the shipped surface is voice mode, with the fancy voices still behind a lab door.</p>
+
+          <h2>The dictation zero-day, patched in a day</h2>
+          <p>On September 21, macOS security researcher Patrick Wardle published a proof of concept called &quot;not-a-mused&quot; showing that any unprivileged local process could flip an undocumented Mac app setting, `endo_voyager_dictation_endpoint`, and reroute Muse&#x27;s dictation traffic to an attacker-controlled server. Dictate a prompt and your words go to the attacker&#x27;s server instead of Meta&#x27;s. From there, Wardle showed, an attacker could read dictated content, inject instructions the agent trusts, and steal the authentication token that signs in the Muse account.</p>
+          <p>The demo went further than audio. From a compromised Mac session it queried Muse&#x27;s inventory of the user&#x27;s devices, pulled a linked iPhone&#x27;s location, and started a Bluetooth scan, all through the Muse client with nothing appearing on screen. Wardle was blunt: he told reporters people should not install the assistant.</p>
+          <p>Meta hot-fixed it within about a day. Wardle&#x27;s post on September 22 reads &quot;Hooray, hot-fixed!&quot; and he praised the speed. He has said he will share more bugs at the Objective by the Sea security conference, so this episode may not be over.</p>
+          <p>The fair caveats. Singleton&#x27;s framing is that this was a local privilege escalation attack, not a remote exploit: it requires malicious code already running on the machine under the user&#x27;s account. Wardle disputes the narrow version, arguing a ClickFix social-engineering attack could deliver the hijack as a remote vector. No CVE was assigned. And this was a conventional local-access software bug underneath a product with unusually broad permissions, not a model-behavior failure. That is arguably the more fixable category, and the more honest lesson: an assistant that holds your files, microphone, camera, location, calendar, and linked devices is a disproportionately valuable hijack target. The setting name will be forgotten; that asymmetry won&#x27;t be.</p>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>Update the Mac app, don&#x27;t run untrusted scripts, and review which accounts and permissions you have connected. The exploit needed code already on your machine, but Muse widens what such code can reach.</p>
+          </div>
+
+          <h2>The 6.8 GB export, ruled &quot;not a bug&quot;</h2>
+          <p>Developer Peter James asked Muse to archive the files it could reach and send them to his connected Google Drive. It did: roughly 2.7 GB compressed, 6.8 GB unpacked. The archive was not his content. It was the root filesystem of the Linux environment assigned to his session: Ubuntu system files, internal documentation, integration code, app templates, memory files, agent logs, and SSH key files (James did not establish whether the keys were active or what they could reach). A dev.to roundup of the same week documents a second researcher who exported a 2.7 GB zip of the agent&#x27;s own cloud VM filesystem: runtime, credential manuals, an unreleased connector list.</p>
+          <p>Meta closed the bug-bounty submission as &quot;Not Applicable&quot; and did not answer Ars Technica&#x27;s questions. The post hit the Hacker News front page with 204 points.</p>
+          <p>Then Meta&#x27;s position flipped the story. A September 25 update to a security explainer reports Meta&#x27;s line: exporting your own VM filesystem is intended behavior. &quot;Muse users can export their own VM filesystem; Meta calls it intended.&quot; David Singleton has said the transparency is deliberate: a file explorer in the Library tab shows every file, and Settings &gt; Data controls &gt; Download your agent data does the same.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>Both things can be true. The export working as designed says the feature is transparency; the bounty closure says Meta never saw it as a boundary violation. What it leaves unanswered is the scope of the Sentinel&#x27;s approval policy. Meta&#x27;s claim is &quot;nothing reaches the internet unless the Sentinel approves it.&quot; That appears to be true, and the Sentinel&#x27;s policy clearly covers a lot more than launch copy implied.</p>
+          </div>
+
+          <h2>Phone calls: finally in limited testing, minus the humans</h2>
+          <p>The one question our launch-week research couldn&#x27;t answer now has an answer. Fox News reported October 3 that Meta is testing outbound calling: some Muse users can ask the agent to call US businesses, book haircuts, check whether a store has an item in stock, get quotes from contractors, with a transcript afterward. It remains in limited testing rather than broadly available. Meta has not announced separate pricing for calling; paid plans are still reported at $20 and $100 a month. This also confirms an earlier datapoint: inviters who hit the referral cap got early access to phone calls.</p>
+          <p>The rollback story is the part to read carefully. Reuters reported September 22-23 that Meta had quietly routed some Muse calls to human contractors without disclosure. Employees raised privacy objections on internal channels, including the sharp one: a bug could leak unnecessary information to call-center contractors. One employee found a contractor had made a racist remark on a cable-bill negotiation call. A Meta VP acknowledged it &quot;was a miss&quot; and said the feature was rolled back for now.</p>
+          <p>The uncomfortable detail: internal tests put human callers at 95 to 98 percent success, versus a lower rate for AI-only calls. That gap is why businesses keep hanging up on the AI, and why Meta was tempted. Meta says any public release would carry proper disclosures and safeguards, and that it is still working on AI calling.</p>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>A phone call is the highest-trust surface in the agent&#x27;s job list: it confirms details, agrees to things, and negotiates in your name. Before you hand Muse your phone, know exactly where its authority starts and ends, and read the transcript.</p>
+          </div>
+
+          <h2>What&#x27;s still in the workshop</h2>
+          <p>TestingCatalog spotted two features being prepared in a recent Muse web build: a dedicated screen-view tab, where you watch the agent&#x27;s virtual computer while it works, and an updated web-based voice mode that resembles a phone call with the agent. Meta officially presented voice mode at Connect as long conversations while the agent works in the background. Muse&#x27;s own email address is also expected. None of these have shipped. Screen view is the one to watch: an agent that shows you its screen answers the transparency complaint, and an agent that always watches the screen raises a new one.</p>
+
+          <h2>What to watch</h2>
+          <p>I&#x27;ll update this page when there&#x27;s movement on any of these: the web voice mode and screen-view tab shipping, and what permissions the screen view inherits; a second independent check of the dictation fix; phone calls moving past limited testing with published pricing and disclosures; the Confidential VM, the user-held-encryption-key version that would make Meta&#x27;s &quot;can&#x27;t see your data&quot; claim cryptographic instead of policy-based, promised later this year with trusted testers.</p>
+
+          <h2>Quick answers</h2>
+          <details>
+            <summary>Does Muse have voice input?</summary>
+            <p>Yes. Muse Voice Transcribe, released September 1, 2026: real-time streaming speech-to-text with 20+ speaker diarization and end-of-speech detection, available through the Meta Model API, Meta AI for Mac, and Muse Code. Independent testing (Artificial Analysis) ranked it first on the streaming transcription leaderboard at 3.1% word error rate.</p>
+          </details>
+          <details>
+            <summary>Can Muse hold a voice conversation?</summary>
+            <p>Meta presented Voice Mode at Connect for long conversations while the agent works in the background, and Alexandr Wang demoed live video chat with a customizable voice and avatar on September 24. Custom voice generation is still in internal testing.</p>
+          </details>
+          <details>
+            <summary>Can Muse make phone calls for me?</summary>
+            <p>It is in limited testing. Per Fox News (October 3), some users can ask Muse to call US businesses, with a transcript afterward. No separate pricing has been announced. Meta previously tested human contractors quietly placing some calls and rolled that back after employee privacy objections.</p>
+          </details>
+          <details>
+            <summary>Was the dictation flaw real?</summary>
+            <p>Yes, and it was patched in about a day. Researcher Patrick Wardle showed that a Mac app setting could be changed by unprivileged local code to redirect dictated audio to an attacker-controlled server. Meta hot-fixed it on September 22.</p>
+          </details>
+          <details>
+            <summary>Can I download Muse&#x27;s own files?</summary>
+            <p>Apparently yes, by design. A researcher exported 6.8 GB of his session&#x27;s VM filesystem through an ordinary conversation; Meta closed the bug-bounty report as &quot;Not Applicable&quot; and later called the export intended behavior.</p>
+          </details>
+
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: What is Muse Voice Transcribe?</strong></p>
+          <p>A: Meta Superintelligence Labs&#x27; real-time audio model, released September 1, 2026: streaming speech-to-text, speaker diarization for 20+ speakers, and end-of-speech detection in one model, re-evaluating audio every 80 milliseconds. Independent testing (Artificial Analysis) ranked it first on the streaming transcription leaderboard at 3.1% word error rate. Pricing is $3 per 1,000 audio minutes, roughly $0.18 an hour, via the Meta Model API. It is speech-to-text only: Meta&#x27;s own docs say it does not synthesize speech or provide a speech-to-speech API.</p>
+          <p><strong>Q: Is voice dictation on Mac safe now?</strong></p>
+          <p>A: The September 21 flaw (an undocumented dictation-endpoint setting, redirectable by unprivileged local code) was hot-fixed by September 22, per researcher Patrick Wardle&#x27;s own confirmation. The exploit required code already running on your Mac, and no CVE was assigned. The durable lesson: an agent with broad permissions is a high-value hijack target, so keep the app updated and avoid untrusted scripts.</p>
+          <p><strong>Q: Why did Meta say the 6.8 GB export was not a bug?</strong></p>
+          <p>A: Meta&#x27;s position, reported in a September 25 security update, is that exporting your own VM filesystem is intended behavior: a file explorer in the Library tab and Settings &gt; Data controls &gt; Download your agent data do the same. The bug-bounty report was closed as &quot;Not Applicable.&quot; What remains unanswered is the scope of the Sentinel&#x27;s approval policy for outbound data.</p>
+          <p><strong>Q: Will a human ever be on my Muse calls?</strong></p>
+          <p>A: Meta tested it and rolled it back. Reuters reported contractors quietly placed some Muse calls; after employee privacy objections and a contractor&#x27;s racist remark on a cable-bill call, a Meta VP called it &quot;a miss&quot; and suspended the test. Human callers reportedly hit 95 to 98 percent success versus a lower AI-only rate. Meta says any public release would carry proper disclosures.</p>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../whos-blocking-muse/">&#8592; Who&#x27;s Blocking Muse: The Merchant-Refusal Tracker</a>
+            <a class="next" href="../">The Guide &#8594;</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+
+    <section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9f51b72e2e74d26a96ec4c925913152"}'></script><!-- End Cloudflare Web Analytics --><script src="https://giscus.app/client.js" data-repo="HannahM87780/Muse_Explained" data-repo-id="[ENTER REPO ID HERE]" data-category="[ENTER CATEGORY NAME HERE]" data-category-id="[ENTER CATEGORY ID HERE]" data-mapping="pathname" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script></body>
+</html>
