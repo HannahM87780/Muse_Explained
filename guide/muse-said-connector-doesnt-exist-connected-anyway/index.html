@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Two connector systems live side by side in Muse: Meta&#x27;s reviewed directory and the custom connectors your Muse builds on the spot. The &quot;it doesn&#x27;t exist&quot; message is a catalog miss, not a capability limit, and the workaround is the part worth understanding." />
+  <link rel="canonical" href="https://museexplained.com/guide/muse-said-connector-doesnt-exist-connected-anyway/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Muse said the GitHub connector didn&#x27;t exist, then connected anyway — Muse Explained" />
+  <meta property="og:description" content="Two connector systems live side by side in Muse: Meta&#x27;s reviewed directory and the custom connectors your Muse builds on the spot. The &quot;it doesn&#x27;t exist&quot; message is a catalog miss, not a capability limit, and the workaround is the part worth understanding." />
+  <meta property="og:url" content="https://museexplained.com/guide/muse-said-connector-doesnt-exist-connected-anyway/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>Muse said the GitHub connector didn&#x27;t exist, then connected anyway — Muse Explained</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Muse said the GitHub connector didn't exist, then connected anyway",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "description": "Muse told a reviewer the GitHub connector did not exist, then connected it anyway. Two connector systems live side by side in Muse, and the consent dialog for the unreviewed one says the quiet part out loud."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does Muse say a connector doesn't exist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It usually means the connector isn't in Meta's reviewed directory, which opened September 18 and is still being filled. The agent can often build a custom connector to the same service on the spot, which is a separate, unreviewed path."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I connect a service that has no directory connector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask Muse to build a custom connector from the service's API or MCP server. Many services publish a setup prompt you paste into a new chat; Muse replies with a sign-in link, you approve it, and the connector is saved. No settings screen is involved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between a directory connector and a custom connector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Directory connectors go through Meta's functional, security, and legal review and are listed in the built-in directory. Custom connectors are built by the agent for one user from a service's API and are not reviewed by Meta. The consent dialog says so directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the custom-connector path safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is designed with guardrails: Sentinel gates every outbound request, and the model only sees surrogate tokens, never your raw credentials. But custom connectors skip Meta's review entirely, request scopes like offline access, and run without the privilege separation of built-in connectors. Read the provider's privacy policy and keep the permissions narrow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I see which connectors are working right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The third-party tracker musedirectory.ai claims 2,367 live-checked connectors with health checks every 15 minutes and Live/Degraded/Down labels. Treat it as an independent scoreboard, not a Meta source."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Muse told me there was no GitHub connector, but Meta announced GitHub support at Connect. What happened?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both things were true at once. GitHub is one of the work connectors Meta explicitly supports, but the agent's directory lookup missed it in at least one reported case (reviewer Taylor Arndt's, after Connect). The agent then connected GitHub through the custom-connector path instead. \"Doesn't exist\" described the directory lookup, not the actual support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Does Meta review connectors before I connect them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only directory connectors. Submit at muse.ai/platform and Meta runs functional, security, and legal review plus end-to-end testing before listing. Custom connectors are not reviewed; Meta's consent dialog states this explicitly and tells you to check the provider's privacy policy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What scopes does a custom connector ask for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies by service, but documented examples request openid, profile, email, and offline_access, meaning the connector keeps working when you are not actively using Muse. Scope it to what the task needs and disconnect what you don't use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Do custom connectors cost extra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No separate fee. Custom connector usage draws from the same usage meter as everything else in the app, so a connector that polls a service constantly costs you the same tokens as a long conversation would."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Can any service get into the directory?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any service can submit at muse.ai/platform. Meta received more than 1,500 applications in under a week after the September 18 launch, and no review timeline has been published, so the queue is the bottleneck, not the bar."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Connectors</p>
+        <h1>Muse said the GitHub connector didn&#x27;t exist, then connected anyway</h1>
+        <p class="lede">Two connector systems live side by side in Muse: Meta&#x27;s reviewed directory and the custom connectors your Muse builds on the spot. The &quot;it doesn&#x27;t exist&quot; message is a catalog miss, not a capability limit, and the workaround is the part worth understanding.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: October 5, 2026.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+          <p>The strangest sentence Muse can say to you is &quot;that connector doesn&#x27;t exist,&quot; delivered seconds before it connects to the thing anyway. That is what happened to reviewer Taylor Arndt, testing Muse after Meta&#x27;s Connect event: &quot;There was some confusion around GitHub at first. At one point Muse acted like there was not a GitHub connector. But the connector system gave us another path, and eventually I had GitHub connected too. Muse pulled the profile and could work with it.&quot;</p>
+          <p>The irony is that GitHub was, at that very moment, one of the work connectors Meta was explicitly announcing at Connect, alongside Notion, Granola, and Box. The agent denied the existence of something Meta was putting on stage the same week. Once you understand why that happened, the whole connector system makes sense, and so does the warning nobody reads before clicking through.</p>
+
+          <h2>&quot;Doesn&#x27;t exist&quot; is the wrong sentence</h2>
+          <p>Muse has two completely different connector systems, and the agent is bad at telling you which one it is talking about.</p>
+          <p><strong>Directory connectors</strong> are the reviewed kind. Meta runs functional, security, and legal review plus end-to-end testing before listing one, and the directory opened September 18 with a sign-in-gated submission form at muse.ai/platform. Alexandr Wang said Meta received more than 1,500 applications in under a week. No review timeline, fees, or revenue-share terms have been published.</p>
+          <p><strong>Custom connectors</strong> are the unreviewed kind. Any Muse user can ask the agent to build a custom connector from a service&#x27;s API or MCP server, and Meta does not review those; the credentials land in Muse&#x27;s secure store behind surrogate tokens so the model never holds the raw secret. As one connector template&#x27;s docs put it: being reachable as a Custom Connector requires nothing from Meta, a user can point Muse at your URL today, and getting listed in the directory is a separate process with review.</p>
+          <p>So when Muse says a connector doesn&#x27;t exist, what it usually means is: &quot;I can&#x27;t find that in my directory list.&quot; The second system, the build-it-yourself one, doesn&#x27;t need the directory at all. That is the &quot;another path&quot; Arndt&#x27;s Muse found.</p>
+
+          <h2>What Meta&#x27;s directory actually contains</h2>
+          <p>There is no single published list from Meta of every connector in the directory, which is part of the problem. The launch set, per Meta&#x27;s developer materials, included Gmail, Google Calendar, Plaid, Stripe Link, Shopify Catalog, OpenTable, Ticketmaster, and Duffel. Connect 2026 added Walmart, Best Buy, Sephora, Notion, Granola, GitHub, Box, and others. Wang has also listed Gmail, Google Calendar, Outlook, Plaid, OpenTable, Google Docs, Spotify, Function Health, Withings, Tailscale, and Peloton, plus the Meta-native set: Instagram, DMs, Threads, Facebook, Marketplace, Messenger.</p>
+          <p>Because no SDK or API spec had been published as of the platform&#x27;s September 18 launch, builders have been documenting the process in the open instead. A third-party tracker, musedirectory.ai, now claims 2,367 live-checked Muse connectors, each health-checked every 15 minutes and labeled Live, Degraded, or Down. Treat the number as the builder&#x27;s own claim (its press release also positions the site against OpenAI&#x27;s rival directory), but the Live/Degraded/Down labeling is the first connector-reliability scoreboard anyone has built, and worth bookmarking if you depend on a connector.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>If a service you want is missing from the directory, don&#x27;t read that as a verdict on the service. The directory is a few weeks old, the review queue is unpublished, and the custom-connector path exists precisely because the directory will always lag behind what the agent can technically reach.</p>
+          </div>
+
+          <h2>The workaround everyone actually uses</h2>
+          <p>Muse has no connector settings screen for these. The community worked out the flow fast: you paste a setup prompt into a new chat, it names the service&#x27;s MCP link and asks for OAuth, Muse replies with a sign-in link, you approve it with your account, and Muse saves the connector.</p>
+          <p>The Postiz guide documents it plainly: &quot;Paste the setup prompt from this page into a new Muse message. It names the Postiz MCP link and asks for OAuth. Muse replies with a sign-in link; approve it with your Postiz account and Muse saves the connector. No API key is needed.&quot;</p>
+          <p>That same paste-a-prompt pattern is now how dozens of small services distribute to Muse users, and community catalogs on GitHub keep the setup prompts organized with capability, authentication, and permission notes per service. It works. It is also, by Meta&#x27;s own description, the unreviewed lane.</p>
+
+          <h2>The consent dialog says the quiet part out loud</h2>
+          <p>This is the part worth slowing down for. When you connect a custom connector, Meta&#x27;s own consent dialog tells you, in plainer language than its help pages, what you are doing. Documented by a builder who read it at connect time:</p>
+          <p>&quot;Meta doesn&#x27;t review custom connectors or how they use your information. The agent may take unexpected actions. Grant access with caution and review their privacy policies.&quot;</p>
+          <p>The same dialog asks for openid, profile, email, and offline_access scopes, and offline access means exactly what it says: it keeps working when you are not there, which is the point of the nightly task and also the reason to think about it.</p>
+          <p>Two technical details soften this, and two don&#x27;t. Softening: every outbound request passes through Sentinel, the separate authority on your VM that gates connector actions and network egress; and the agent only ever sees surrogate tokens, with real credentials inserted at the network boundary. Not softening: custom connector code runs inside Muse&#x27;s own runtime cell without the extra privilege separation Meta applies to built-in connectors, and one builder documents that Muse&#x27;s egress proxy hangs on Server-Sent Events, so connectors must use POST-only streaming, the kind of sharp edge that only shows up when something breaks in production.</p>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>Treat a custom connector like a browser extension: useful, fast to install, and written by whoever wrote it. &quot;Muse doesn&#x27;t have it&quot; followed by &quot;Muse built it for me in two minutes&quot; is not a safety finding. It is the agent skipping the one review queue Meta built.</p>
+          </div>
+
+          <h2>What to watch</h2>
+          <p>The connector story is young, and the parts that would change this page are concrete: Meta publishing actual developer documentation (the zero-docs launch is the root of the whole &quot;another path&quot; pattern), a published review timeline for the directory queue, and somebody publishing a per-connector permission-scope matrix, since no canonical &quot;what can this connector read and write&quot; list exists today. I&#x27;ll update this page when any of that lands. Until then, musedirectory.ai&#x27;s Live/Degraded/Down tracker is the closest thing to a status page the ecosystem has.</p>
+
+          <h2>Quick answers</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Why does Muse say a connector doesn&#x27;t exist?</summary>
+              <p>It usually means the connector isn&#x27;t in Meta&#x27;s reviewed directory, which opened September 18 and is still being filled. The agent can often build a custom connector to the same service on the spot, which is a separate, unreviewed path.</p>
+            </details>
+            <details>
+              <summary>How do I connect a service that has no directory connector?</summary>
+              <p>Ask Muse to build a custom connector from the service&#x27;s API or MCP server. Many services publish a setup prompt you paste into a new chat; Muse replies with a sign-in link, you approve it, and the connector is saved. No settings screen is involved.</p>
+            </details>
+            <details>
+              <summary>What&#x27;s the difference between a directory connector and a custom connector?</summary>
+              <p>Directory connectors go through Meta&#x27;s functional, security, and legal review and are listed in the built-in directory. Custom connectors are built by the agent for one user from a service&#x27;s API and are not reviewed by Meta. The consent dialog says so directly.</p>
+            </details>
+            <details>
+              <summary>Is the custom-connector path safe?</summary>
+              <p>It is designed with guardrails: Sentinel gates every outbound request, and the model only sees surrogate tokens, never your raw credentials. But custom connectors skip Meta&#x27;s review entirely, request scopes like offline access, and run without the privilege separation of built-in connectors. Read the provider&#x27;s privacy policy and keep the permissions narrow.</p>
+            </details>
+            <details>
+              <summary>Where can I see which connectors are working right now?</summary>
+              <p>The third-party tracker musedirectory.ai claims 2,367 live-checked connectors with health checks every 15 minutes and Live/Degraded/Down labels. Treat it as an independent scoreboard, not a Meta source.</p>
+            </details>
+          </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: Muse told me there was no GitHub connector, but Meta announced GitHub support at Connect. What happened?</strong></p>
+          <p>A: Both things were true at once. GitHub is one of the work connectors Meta explicitly supports, but the agent&#x27;s directory lookup missed it in at least one reported case (reviewer Taylor Arndt&#x27;s, after Connect). The agent then connected GitHub through the custom-connector path instead. &quot;Doesn&#x27;t exist&quot; described the directory lookup, not the actual support.</p>
+          <p><strong>Q: Does Meta review connectors before I connect them?</strong></p>
+          <p>A: Only directory connectors. Submit at muse.ai/platform and Meta runs functional, security, and legal review plus end-to-end testing before listing. Custom connectors are not reviewed; Meta&#x27;s consent dialog states this explicitly and tells you to check the provider&#x27;s privacy policy.</p>
+          <p><strong>Q: What scopes does a custom connector ask for?</strong></p>
+          <p>A: It varies by service, but documented examples request openid, profile, email, and offline_access, meaning the connector keeps working when you are not actively using Muse. Scope it to what the task needs and disconnect what you don&#x27;t use.</p>
+          <p><strong>Q: Do custom connectors cost extra?</strong></p>
+          <p>A: No separate fee. Custom connector usage draws from the same usage meter as everything else in the app, so a connector that polls a service constantly costs you the same tokens as a long conversation would.</p>
+          <p><strong>Q: Can any service get into the directory?</strong></p>
+          <p>A: Any service can submit at muse.ai/platform. Meta received more than 1,500 applications in under a week after the September 18 launch, and no review timeline has been published, so the queue is the bottleneck, not the bar.</p>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../muse-explains-biographies-read-aloud/">&#8592; Muse explains.</a>
+            <a class="next" href="../">The Guide &#8594;</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+
+<section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
+    </div>
+  </footer>
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9f51b72e2e74d26a96ec4c925913152"}'></script><!-- End Cloudflare Web Analytics --><script src="https://giscus.app/client.js" data-repo="HannahM87780/Muse_Explained" data-repo-id="[ENTER REPO ID HERE]" data-category="[ENTER CATEGORY NAME HERE]" data-category-id="[ENTER CATEGORY ID HERE]" data-mapping="pathname" data-strict="0" data-rections-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script></body>
+</html>
