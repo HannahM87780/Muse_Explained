@@ -1,2 +1,244 @@
 <!doctype html>
-<html><body><p>placeholder</p></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Usage ran roughly 10 times what Meta planned for, the search broke for a lot of people, and one agent costs far more to run than one chatbot answer. What the launch-week strain tells you about how Muse actually works." />
+  <link rel="canonical" href="https://museexplained.com/guide/why-muse-went-slow-in-week-two/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why Muse went slow in week two — Muse Explained" />
+  <meta property="og:description" content="Usage ran roughly 10 times what Meta planned for, the search broke for a lot of people, and one agent costs far more to run than one chatbot answer. What the launch-week strain tells you about how Muse actually works." />
+  <meta property="og:url" content="https://museexplained.com/guide/why-muse-went-slow-in-week-two/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>Why Muse went slow in week two — Muse Explained</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Muse went slow in week two",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "description": "In week two, real Muse users consumed about 10 times what Meta planned for, and search broke for a lot of people. What the launch-week strain tells you about why one agent costs far more to run than one chatbot answer."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was Muse down in September?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta never named an outage. Unofficial trackers listed it as \"Degraded\" and users reported recurring failures, especially search. Think degraded, not down."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did usage surprise Meta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta's chief AI officer said on September 9 that real users consumed about 10 times what internal testing cohorts used. Real users ran background tasks, parallel agents, and long browser sessions that testers never modeled. Meta reset token usage and raised limits in response."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is one Muse user so expensive to serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta gives each user a dedicated VM (2 vCPUs, 8 GB RAM, 100 GB SSD) that stays alive even when idle, on top of the model inference cost. A chatbot answer is a single inference; an agent session is a computer plus inference plus browsing. Independent analyses suggest the VM layer is oversubscribable, but oversubscription bets on usage patterns Meta is still learning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it still slow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The rough launch window has passed, but the low-level drumbeat of search and login complaints never fully stopped, and an identical error string recurred across many days in early October with no Meta acknowledgment. It is stable but not polished."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Did Meta publish a postmortem for the degraded weeks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Meta has not published a status page, an incident write-up, or an acknowledgment of the repeated user-facing failures. The record comes from unofficial trackers and user reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Does paying for Power or Maximum fix the slowness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The paid tiers buy larger weekly usage allowances, not priority infrastructure as far as Meta has said. If the bottleneck is shared capacity, a bigger allowance does not necessarily mean faster responses. Meta has not published per-tier performance guarantees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: How many users does Muse actually have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta has disclosed no official figures. Third-party estimates put cumulative downloads in the 2.5 to 6.6 million range depending on the firm and the date, with The Information reporting 3 million weekly prompt-senders and 1 million daily prompt-senders as of October 1. Treat every figure as an estimate until Meta's earnings call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What is the next check on whether Meta solved the scaling problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta's Q3 earnings on October 28, the first time the company could disclose official usage numbers. Watch for whether Meta talks about per-user compute costs, because that is the number that decides whether the free tier stays generous."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Troubleshooting</p>
+        <h1>Why Muse went slow in week two</h1>
+        <p class="lede">Usage ran roughly 10 times what Meta planned for, the search broke for a lot of people, and one agent costs far more to run than one chatbot answer. What the launch-week strain tells you about how Muse actually works.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: October 9, 2026.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+          <p>If you were an early Muse user, you remember the week of September 20: searches that returned nothing, tasks that stalled, and an app that felt like it was thinking far too hard about every request. Here is what happened, how Meta responded, and why the math behind one user explains why a chatbot company found agents so hard to scale.</p>
+
+          <h2>The demand surprise: 10x the plan</h2>
+          <p>Muse launched on September 8, 2026. One day later, Meta&#x27;s chief AI officer Alexandr Wang said early usage had &quot;blown way past our projections,&quot; with real users consuming about 10 times what internal testing cohorts had used. Meta responded by resetting token usage and raising the weekly limits.</p>
+          <p>That is a first-party statement from Meta, and it is the cleanest fact in this story: Meta built its capacity plan on internal testers, and internal testers were nothing like real people. Real people handed the agent their inboxes, their calendars, and their Marketplaces and walked away while it worked.</p>
+          <p>The numbers behind the rush are third-party estimates, so read them as such. Similarweb put Muse at around 700,000 daily active users within two weeks of launch, up roughly 10x in 11 days, still short of one million. Apptopia estimated 1.8 million iOS downloads in the first twelve days, ahead of ChatGPT&#x27;s early pace, and Sensor Tower figures put cumulative downloads past 5 million by the end of September. The demand side is not in dispute. The question is whether Meta could afford to serve it.</p>
+
+          <h2>What &quot;degraded&quot; looked like</h2>
+          <p>Meta never ran a public status page with named incidents, so the record of the rough weeks comes from unofficial trackers and user reports, not from Meta. The status monitor SaaSHub listed Muse as &quot;Degraded&quot; through the launch window, with &quot;can&#x27;t search&quot; as the most common complaint: the checks reached the service, but users kept reporting failures. Separately, users reported a persistent identical error string (&quot;Sorry, I ran into a problem while responding. Please try again.&quot;) across many straight days in early October, with no named outage, no news coverage, and no Meta acknowledgment.</p>
+          <p>That is the honest read on the incident record: there were real, repeated user-facing failures, and Meta&#x27;s public communication about them was silence. If you come from apps with status pages and incident write-ups, this is the part of the Muse story to watch. Meta&#x27;s transparency moves elsewhere (publishing the file-extraction mechanics, explaining the permission model) have not extended to telling users when the service is struggling.</p>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>A status tracker marked &quot;Degraded&quot; and a uniform error message are symptoms, not a diagnosis. Neither tells you which layer failed: the model backend, the VM orchestration, or the browsing pipeline. Meta has not said. Treat every third-party root-cause claim about a specific bad week as speculation until Meta publishes one.</p>
+          </div>
+
+          <h2>Why one user costs more than one chatbot answer</h2>
+          <p>Here is the structural part, and it is the reason week two went the way it did. Meta promised every Muse user a dedicated virtual machine: 2 vCPUs, 8 GB of RAM, and 100 GB of SSD, per Meta&#x27;s own materials. A chatbot answer costs a few seconds of GPU time. A Muse user costs a computer that stays alive even when the user walks away.</p>
+          <p>One widely cited back-of-the-envelope calculation (from analyst Freda Duan&#x27;s public thread) put the naive math for 100 million daily active users at roughly 1 GW of power, with most of it going to model inference rather than the VMs themselves, because real VMs spend most of their time waiting: for model responses, tool results, and user input. That means the VM layer can be oversubscribed, which is how Meta is presumably coping. But oversubscription is a bet on how people behave, and in September 2026 people behaved in ways the capacity plan did not predict: background tasks that run all night, subagents that spawn subagents, browsers that hold sessions open for hours.</p>
+
+          <h2>The stress-test number</h2>
+          <p>One researcher tested how far the orchestration layer would stretch: asking Muse to spawn 120 subagents at once. Only 33 succeeded. That number is anecdote, not a published limit, but it points at where the system is thinnest: not the model and not the VM, but the control plane that coordinates agents doing parallel work. An agent product is a coordination product, and coordination is the part Meta is still scaling.</p>
+
+          <h2>Where things stand now</h2>
+          <p>By October, the picture stabilized into growth with growing pains rather than a crisis. The Information reported (via its October 1 figures) that 3 million users were sending at least one prompt per week, and 1 million daily active users had sent a prompt. The user counts kept climbing while the complaint surface kept its low-level drumbeat of search failures and login issues, the kind of degradation that is annoying rather than fatal.</p>
+          <p>Two demand wildcards matter for the next stretch. First, Meta&#x27;s own signup floodgates inside WhatsApp and Instagram remain closed: you sign up in the app or on the web, then reach the agent on the other surfaces. Second, Meta&#x27;s Q3 earnings on October 28 is the first moment Meta has to put its own numbers on the record: no official usage or revenue figures for Muse have been disclosed so far. If the company has fixed the scaling math, earnings is where it can say so. If it has not, earnings is where the questions get louder.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>The launch-week lesson for users is practical, not philosophical. When Muse is slow or fails, it is usually not your phone, your connection, or your prompt. It is capacity. Wait an hour and retry before rebuilding your workflow around the failure. And if you are weighing the paid tiers, remember what the plans actually buy: compute. A $20 month gets you a bigger slice of a pool Meta is still expanding, not a different product.</p>
+          </div>
+
+          <h2>Quick answers</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Was Muse down in September?</summary>
+              <p>Meta never named an outage. Unofficial trackers listed it as &quot;Degraded&quot; and users reported recurring failures, especially search. Think degraded, not down.</p>
+            </details>
+            <details>
+              <summary>Why did usage surprise Meta?</summary>
+              <p>Meta&#x27;s chief AI officer said on September 9 that real users consumed about 10 times what internal testing cohorts used. Real users ran background tasks, parallel agents, and long browser sessions that testers never modeled. Meta reset token usage and raised limits in response.</p>
+            </details>
+            <details>
+              <summary>Why is one Muse user so expensive to serve?</summary>
+              <p>Meta gives each user a dedicated VM (2 vCPUs, 8 GB RAM, 100 GB SSD) that stays alive even when idle, on top of the model inference cost. A chatbot answer is a single inference; an agent session is a computer plus inference plus browsing. Independent analyses suggest the VM layer is oversubscribable, but oversubscription bets on usage patterns Meta is still learning.</p>
+            </details>
+            <details>
+              <summary>Is it still slow?</summary>
+              <p>The rough launch window has passed, but the low-level drumbeat of search and login complaints never fully stopped, and an identical error string recurred across many days in early October with no Meta acknowledgment. It is stable but not polished.</p>
+            </details>
+          </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: Did Meta publish a postmortem for the degraded weeks?</strong></p>
+          <p>A: No. Meta has not published a status page, an incident write-up, or an acknowledgment of the repeated user-facing failures. The record comes from unofficial trackers and user reports.</p>
+          <p><strong>Q: Does paying for Power or Maximum fix the slowness?</strong></p>
+          <p>A: The paid tiers buy larger weekly usage allowances, not priority infrastructure as far as Meta has said. If the bottleneck is shared capacity, a bigger allowance does not necessarily mean faster responses. Meta has not published per-tier performance guarantees.</p>
+          <p><strong>Q: How many users does Muse actually have?</strong></p>
+          <p>A: Meta has disclosed no official figures. Third-party estimates put cumulative downloads in the 2.5 to 6.6 million range depending on the firm and the date, with The Information reporting 3 million weekly prompt-senders and 1 million daily prompt-senders as of October 1. Treat every figure as an estimate until Meta&#x27;s earnings call.</p>
+          <p><strong>Q: What is the next check on whether Meta solved the scaling problem?</strong></p>
+          <p>A: Meta&#x27;s Q3 earnings on October 28, the first time the company could disclose official usage numbers. Watch for whether Meta talks about per-user compute costs, because that is the number that decides whether the free tier stays generous.</p>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../muse-on-whatsapp-vs-full-app/">&#8592; Muse on WhatsApp vs the full app</a>
+            <a class="next" href="../">The Guide &#8594;</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+
+<section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
+    </div>
+  </footer>
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9f51b72e2e74d26a96ec4c925913152"}'></script><!-- End Cloudflare Web Analytics --><script src="https://giscus.app/client.js" data-repo="HannahM87780/Muse_Explained" data-repo-id="[ENTER REPO ID HERE]" data-category="[ENTER CATEGORY NAME HERE]" data-category-id="[ENTER CATEGORY ID HERE]" data-mapping="pathname" data-strict="0" data-rections-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script></body>
+</html>
+
+
