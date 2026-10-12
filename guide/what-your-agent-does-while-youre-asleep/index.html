@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Your Muse has its own computer in Meta&#x27;s cloud that stays on when your phone is off. Here is what actually runs overnight, how reminders and standing goals work, and what the background habit costs you in tokens." />
+  <link rel="canonical" href="https://museexplained.com/guide/what-your-agent-does-while-youre-asleep/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What your agent does while you&#x27;re asleep — Muse Explained" />
+  <meta property="og:description" content="Your Muse has its own computer in Meta&#x27;s cloud that stays on when your phone is off. Here is what actually runs overnight, how reminders and standing goals work, and what the background habit costs you in tokens." />
+  <meta property="og:url" content="https://museexplained.com/guide/what-your-agent-does-while-youre-asleep/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>What your agent does while you&#x27;re asleep — Muse Explained</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What your agent does while you're asleep",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "description": "Your Muse has its own computer in Meta's cloud, not a tab on your phone. Here is what actually runs overnight: reminders, standing goals, and long-running tasks, how each one works, and what the background habit costs in tokens."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does my Muse keep working when I close the app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It runs on its own virtual machine in Meta's cloud, not on your phone. Meta says it keeps working in the background after you close the app and returns when something changes or it needs your approval."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do reminders work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask in plain language, one-time or recurring. They arrive as messages in the chat. You can view, edit, and cancel them from the app's Upcoming view."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a standing goal versus a reminder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A reminder fires on its schedule and tells you something. A goal is an open loop: the agent makes a plan, works it on its own, and checks in when there is progress or a decision to make. Both can run overnight; goals do more between pings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does background work use my tokens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, from your weekly allowance. The paid tiers (Power at $20, Maximum at $100) buy more usage, which is what you would reach for if background goals run around the clock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What is the Muse Secure VM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your own dedicated virtual machine in Meta's cloud, where your agent and its browser live. It is what lets the agent keep sessions, files, and work going while your phone is off. A separate Sentinel system governs what leaves the machine, and your logins sit in a credential store the agent cannot read."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Can I see what it did while I was away?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The app keeps an audit trail of the agent's actions, including what it is planning to do next. Check it in the morning. That is how you learn what your overnight jobs actually tried, and where they stalled."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What happens if a background task needs my approval at 3am?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It waits. The approval gate does not auto-resolve: Meta's design is that the agent asks before sensitive moves and returns to you when approval is needed. The task stalls until you weigh in, which is the point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Are the VM specs published?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The existence of the dedicated, persistent VM and the Sentinel system are Meta's own claims. Specs, costs, and sizing are unpublished. Anything you read about core counts or instance types is community guesswork, not official."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Automation</p>
+        <h1>What your agent does while you&#x27;re asleep</h1>
+        <p class="lede">Your Muse has its own computer in Meta&#x27;s cloud that stays on when your phone is off. Here is what actually runs overnight, how reminders and standing goals work, and what the background habit costs you in tokens.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: October 11, 2026.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+          <p>The thing that surprised me most about Muse was not any single task. It was opening the app at 7 in the morning and finding it had already been working. My phone was in my pocket all night. The agent was somewhere else: its own computer, in Meta&#x27;s cloud, doing the job I gave it the day before.</p>
+          <p>That is the core fact of this post. Your Muse is not a tab on your phone. It is a persistent machine that keeps its own browser sessions, its own memory, and its own to-do list, and it keeps working after you close the app. Meta&#x27;s own line at launch: it &quot;keeps working in the background whether you&#x27;re actively using the app or not,&quot; and it comes back to you when something changes or when it needs your approval.</p>
+
+          <h2>The machine behind it</h2>
+          <p>Meta calls the setup the Muse Secure VM: a dedicated virtual machine, one per user, with its own browser for doing web work. Meta describes it as &quot;persistent, dedicated,&quot; and persistent is doing the heavy lifting in that sentence. A session that stays logged in can resume a half-finished job tomorrow. A session that stays logged in can also act while you are asleep, which is why the approval gate matters as much as the VM itself.</p>
+          <p>A second system called Sentinel rides on the same VM. Zuckerberg&#x27;s own description at launch: a Sentinel agent, separate from your Muse, runs on the VM, and every action or piece of data that goes out to the network has to be approved by the Sentinel. Your logins, meanwhile, sit in a credential store the agent itself cannot read; Meta&#x27;s technical writeups name it hatch-authd, and 1Password integration is still described as coming soon.</p>
+          <p>One honest boundary: nobody outside Meta knows the specs of that VM. A September estimate floating around social media put it at a small cloud instance (2 vCPUs, 8GB of RAM), but that number came from an independent poster, not Meta. Meta has published no specs. Treat any sizing claim as guesswork.</p>
+
+          <h2>What runs overnight: three kinds of background work</h2>
+          <p><strong>1. Reminders.</strong> Ask in plain language: &quot;remind me to call the dentist tomorrow at 10am.&quot; They arrive as messages in the chat. Recurring ones work too (&quot;every Monday at 9am remind me to submit my timesheet&quot;). Community documentation of the current app describes an Upcoming view that lists them all, and you can edit or cancel them right from chat.</p>
+          <p><strong>2. Standing goals.</strong> This is the sleeper feature. Give the agent a goal plus a check: &quot;check Gmail every morning and tell me only if they reply.&quot; Meta&#x27;s own announcement language is that once you share a goal, the agent builds a plan and &quot;advances the work on its own,&quot; coordinating your time and resources without you standing over it. The pattern that works: name the goal and name the check. A bare &quot;get me the refund&quot; does nothing overnight. A &quot;check this every morning and report back&quot; does.</p>
+          <p><strong>3. Long-running tasks.</strong> Meta&#x27;s launch materials name the multi-day examples: negotiating a car sale, grinding through a bill negotiation. For these, the agent works after you close the app and returns when something changes or it needs a decision. Meta&#x27;s own ambient example was monitoring weather reports and sending an alert about rain; the real uses are watchlists, inboxes, and anything with a &quot;tell me when&quot; shape.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>The overnight shape that actually delivers is the standing instruction with a quiet success condition. &quot;Watch this flight price and tell me if it drops below $300&quot; runs while you sleep and only pings you when there is news. Vague goals stall; checked goals move. Goal plus check is the difference between a demo and a deputy.</p>
+          </div>
+
+          <h2>What it costs</h2>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p><strong>Background work burns your weekly allowance while you sleep.</strong> The free tier&#x27;s roughly 100 million tokens a week comes from Zuckerberg&#x27;s own Threads post; Meta&#x27;s help page only says the free allowance is &quot;limited and refreshes.&quot; Either way, it is one pool, and your overnight jobs draw from it. A watchful agent is a spending agent. If you set up nightly checks and morning digests, read the usage meter in the app during your first week. That meter is the only honest pricing page.</p>
+          </div>
+          <p>One more practical point: background goals stall quietly when a permission is missing. An overnight inbox check needs the email connector; a price watch needs the shopping access it was built for. Test each background job once while awake before you trust it overnight.</p>
+
+          <h2>Quick answers</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Does my Muse keep working when I close the app?</summary>
+              <p>Yes. It runs on its own virtual machine in Meta's cloud, not on your phone. Meta says it keeps working in the background after you close the app and returns when something changes or it needs your approval.</p>
+            </details>
+            <details>
+              <summary>How do reminders work?</summary>
+              <p>Ask in plain language, one-time or recurring. They arrive as messages in the chat. You can view, edit, and cancel them from the app&#x27;s Upcoming view.</p>
+            </details>
+            <details>
+              <summary>What is a standing goal versus a reminder?</summary>
+              <p>A reminder fires on its schedule and tells you something. A goal is an open loop: the agent makes a plan, works it on its own, and checks in when there is progress or a decision to make. Both can run overnight; goals do more between pings.</p>
+            </details>
+            <details>
+              <summary>Does background work use my tokens?</summary>
+              <p>Yes, from your weekly allowance. The paid tiers (Power at $20, Maximum at $100) buy more usage, which is what you would reach for if background goals run around the clock.</p>
+            </details>
+          </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: What is the Muse Secure VM?</strong></p>
+          <p>A: Your own dedicated virtual machine in Meta&#x27;s cloud, where your agent and its browser live. It is what lets the agent keep sessions, files, and work going while your phone is off. A separate Sentinel system governs what leaves the machine, and your logins sit in a credential store the agent cannot read.</p>
+          <p><strong>Q: Can I see what it did while I was away?</strong></p>
+          <p>A: The app keeps an audit trail of the agent&#x27;s actions, including what it is planning to do next. Check it in the morning. That is how you learn what your overnight jobs actually tried, and where they stalled.</p>
+          <p><strong>Q: What happens if a background task needs my approval at 3am?</strong></p>
+          <p>A: It waits. The approval gate does not auto-resolve: Meta&#x27;s design is that the agent asks before sensitive moves and returns to you when approval is needed. The task stalls until you weigh in, which is the point.</p>
+          <p><strong>Q: Are the VM specs published?</strong></p>
+          <p>A: No. The existence of the dedicated, persistent VM and the Sentinel system are Meta&#x27;s own claims. Specs, costs, and sizing are unpublished. Anything you read about core counts or instance types is community guesswork, not official.</p>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../muse-charm/">&#8592; Muse Charm explained: Meta&#x27;s keychain AI gadget</a>
+            <a class="next" href="../">The Guide &#8594;</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+
+<section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
+    </div>
+  </footer>
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9f51b72e2e74d26a96ec4c925913152"}'></script><!-- End Cloudflare Web Analytics --><script src="https://giscus.app/client.js" data-repo="HannahM87780/Muse_Explained" data-repo-id="[ENTER REPO ID HERE]" data-category="[ENTER CATEGORY NAME HERE]" data-category-id="[ENTER CATEGORY ID HERE]" data-mapping="pathname" data-strict="0" data-rections-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script></body>
+</html>
