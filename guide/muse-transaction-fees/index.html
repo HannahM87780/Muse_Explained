@@ -4,54 +4,105 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
-  <meta name="description" content="Is Muse safe? Secure VM, Sentinel, approvals, and the honest caveats — what Meta's safety architecture does and doesn't promise." />
-  <link rel="canonical" href="https://museexplained.com/guide/is-muse-safe/" />
+  <meta name="description" content="Your Muse has its own computer in Meta&#x27;s cloud that stays on when your phone is off. Here is what actually runs overnight, how reminders and standing goals work, and what the background habit costs you in tokens." />
+  <link rel="canonical" href="https://museexplained.com/guide/what-your-agent-does-while-youre-asleep/" />
   <link rel="icon" href="data:," />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Is Muse Safe? — Muse Explained" />
-  <meta property="og:description" content="Secure VM, Sentinel, approvals, and the honest caveats — what the architecture does and doesn't promise." />
-  <meta property="og:url" content="https://museexplained.com/guide/is-muse-safe/" />
+  <meta property="og:title" content="What your agent does while you&#x27;re asleep — Muse Explained" />
+  <meta property="og:description" content="Your Muse has its own computer in Meta&#x27;s cloud that stays on when your phone is off. Here is what actually runs overnight, how reminders and standing goals work, and what the background habit costs you in tokens." />
+  <meta property="og:url" content="https://museexplained.com/guide/what-your-agent-does-while-youre-asleep/" />
   <meta name="twitter:card" content="summary" />
   <link rel="stylesheet" href="../../assets/style.css" />
-  <title>Is Muse Safe? — Muse Explained</title>
+  <title>What your agent does while you&#x27;re asleep — Muse Explained</title>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Is Muse Safe?",
-    "author": {"@type": "Organization", "name": "Muse Explained"},
-    "datePublished": "2026-09-18",
-    "dateModified": "2026-09-18",
-    "description": "What Meta's safety architecture for Muse does and doesn't promise, explained independently."
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What your agent does while you're asleep",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "description": "Your Muse has its own computer in Meta's cloud, not a tab on your phone. Here is what actually runs overnight: reminders, standing goals, and long-running tasks, how each one works, and what the background habit costs in tokens."
+}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is Muse safe to use?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Muse has a serious safety architecture — an isolated Secure VM, a Sentinel system controlling network access, approval prompts for sensitive actions, and credential storage the agent can't see. The honest caveat: Meta acknowledges it could technically access the Secure VM, with a fully user-controlled Confidential VM planned."}
-      },
-      {
-        "@type": "Question",
-        "name": "Can Muse see my passwords?",
-        "acceptedAnswer": {"@type": "Answer", "text": "No. Credentials go into secure storage that the agent itself cannot see. It works with stand-in tokens, and real credentials are inserted at the network boundary only after an action is authorized."}
-      },
-      {
-        "@type": "Question",
-        "name": "Does Meta use my Muse conversations for ads or training?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Meta says Muse data is not shared with its advertising systems, and users can opt out of having interactions used to train Meta's AI models."}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does my Muse keep working when I close the app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It runs on its own virtual machine in Meta's cloud, not on your phone. Meta says it keeps working in the background after you close the app and returns when something changes or it needs your approval."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How do reminders work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask in plain language, one-time or recurring. They arrive as messages in the chat. You can view, edit, and cancel them from the app's Upcoming view."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a standing goal versus a reminder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A reminder fires on its schedule and tells you something. A goal is an open loop: the agent makes a plan, works it on its own, and checks in when there is progress or a decision to make. Both can run overnight; goals do more between pings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does background work use my tokens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, from your weekly allowance. The paid tiers (Power at $20, Maximum at $100) buy more usage, which is what you would reach for if background goals run around the clock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What is the Muse Secure VM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your own dedicated virtual machine in Meta's cloud, where your agent and its browser live. It is what lets the agent keep sessions, files, and work going while your phone is off. A separate Sentinel system governs what leaves the machine, and your logins sit in a credential store the agent cannot read."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Can I see what it did while I was away?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The app keeps an audit trail of the agent's actions, including what it is planning to do next. Check it in the morning. That is how you learn what your overnight jobs actually tried, and where they stalled."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What happens if a background task needs my approval at 3am?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It waits. The approval gate does not auto-resolve: Meta's design is that the agent asks before sensitive moves and returns to you when approval is needed. The task stalls until you weigh in, which is the point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Are the VM specs published?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The existence of the dedicated, persistent VM and the Sentinel system are Meta's own claims. Specs, costs, and sizing are unpublished. Anything you read about core counts or instance types is community guesswork, not official."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-
+<a class="skip" href="#content">Skip to content</a>
   <header class="masthead">
     <div class="wrap masthead-inner">
       <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
@@ -67,80 +118,74 @@
   <main id="content">
     <div class="page-hero">
       <div class="wrap">
-        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Safety</p>
-        <h1>Is Muse Safe?</h1>
-        <p class="lede">The safety architecture is the most thought-through part of the product — and the part where Meta's history makes people (reasonably) skeptical. Here's both sides, straight.</p>
-        <p class="updated">Last checked against the live product: September 18, 2026.</p>
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Automation</p>
+        <h1>What your agent does while you&#x27;re asleep</h1>
+        <p class="lede">Your Muse has its own computer in Meta&#x27;s cloud that stays on when your phone is off. Here is what actually runs overnight, how reminders and standing goals work, and what the background habit costs you in tokens.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: October 11, 2026.</p>
       </div>
     </div>
 
     <section class="section">
       <div class="wrap">
         <article class="article">
-          <p>Handing an AI agent your email, calendar, and payment info is a bigger ask than anything Meta has made of consumers before. Meta knows it — and to their credit, the safety design of Muse is more serious than the usual "trust us" page. It's also not the whole story. Let's take it layer by layer.</p>
+          <p>The thing that surprised me most about Muse was not any single task. It was opening the app at 7 in the morning and finding it had already been working. My phone was in my pocket all night. The agent was somewhere else: its own computer, in Meta&#x27;s cloud, doing the job I gave it the day before.</p>
+          <p>That is the core fact of this post. Your Muse is not a tab on your phone. It is a persistent machine that keeps its own browser sessions, its own memory, and its own to-do list, and it keeps working after you close the app. Meta&#x27;s own line at launch: it &quot;keeps working in the background whether you&#x27;re actively using the app or not,&quot; and it comes back to you when something changes or when it needs your approval.</p>
 
-          <h2>Layer 1: The Secure VM</h2>
-          <p>Muse runs inside an isolated, persistent Linux virtual machine — Meta calls it the <strong>Secure VM</strong> — that holds its browser, storage, and working memory. The idea: the agent's activity happens in a contained box, with trusted data kept away from the open internet and from the parts of the system that act on your behalf.</p>
-          <p>In practice this means a compromised website or a malicious instruction can't easily reach outside the box. It's a meaningful architectural choice, not a marketing label.</p>
+          <h2>The machine behind it</h2>
+          <p>Meta calls the setup the Muse Secure VM: a dedicated virtual machine, one per user, with its own browser for doing web work. Meta describes it as &quot;persistent, dedicated,&quot; and persistent is doing the heavy lifting in that sentence. A session that stays logged in can resume a half-finished job tomorrow. A session that stays logged in can also act while you are asleep, which is why the approval gate matters as much as the VM itself.</p>
+          <p>A second system called Sentinel rides on the same VM. Zuckerberg&#x27;s own description at launch: a Sentinel agent, separate from your Muse, runs on the VM, and every action or piece of data that goes out to the network has to be approved by the Sentinel. Your logins, meanwhile, sit in a credential store the agent itself cannot read; Meta&#x27;s technical writeups name it hatch-authd, and 1Password integration is still described as coming soon.</p>
+          <p>One honest boundary: nobody outside Meta knows the specs of that VM. A September estimate floating around social media put it at a small cloud instance (2 vCPUs, 8GB of RAM), but that number came from an independent poster, not Meta. Meta has published no specs. Treat any sizing claim as guesswork.</p>
 
-          <h2>Layer 2: Sentinel, the gatekeeper</h2>
-          <p>A separate system called <strong>Sentinel</strong> controls everything leaving the VM. Every network request is checked against the policies you've set: allowed, denied, or escalated to you for a decision. If Sentinel can't match an action to an existing approval, you get a notification asking what to do.</p>
-          <p>The clever part is credential handling. The agent <strong>never sees your real passwords or tokens</strong> — it works with stand-in tokens, and Sentinel swaps in the real credential at the network boundary only after the request is authorized. Even if something tricked the agent into revealing "its" credentials, there'd be nothing real to reveal.</p>
-
-          <h2>Layer 3: You, the approver</h2>
-          <p>Before sensitive actions — sending an email, making a purchase — Muse asks. You can allow once, for the task, for a site, or always for a connector, or deny. Permission defaults live in Settings, including an always-ask posture. Everything is recorded in an <strong>Activity log</strong>, and some actions can be undone or stopped mid-flight. (Sent emails can't — same as sending them yourself.)</p>
+          <h2>What runs overnight: three kinds of background work</h2>
+          <p><strong>1. Reminders.</strong> Ask in plain language: &quot;remind me to call the dentist tomorrow at 10am.&quot; They arrive as messages in the chat. Recurring ones work too (&quot;every Monday at 9am remind me to submit my timesheet&quot;). Community documentation of the current app describes an Upcoming view that lists them all, and you can edit or cancel them right from chat.</p>
+          <p><strong>2. Standing goals.</strong> This is the sleeper feature. Give the agent a goal plus a check: &quot;check Gmail every morning and tell me only if they reply.&quot; Meta&#x27;s own announcement language is that once you share a goal, the agent builds a plan and &quot;advances the work on its own,&quot; coordinating your time and resources without you standing over it. The pattern that works: name the goal and name the check. A bare &quot;get me the refund&quot; does nothing overnight. A &quot;check this every morning and report back&quot; does.</p>
+          <p><strong>3. Long-running tasks.</strong> Meta&#x27;s launch materials name the multi-day examples: negotiating a car sale, grinding through a bill negotiation. For these, the agent works after you close the app and returns when something changes or it needs a decision. Meta&#x27;s own ambient example was monitoring weather reports and sending an alert about rain; the real uses are watchlists, inboxes, and anything with a &quot;tell me when&quot; shape.</p>
           <div class="callout field-note">
             <span class="label">Field note</span>
-            <p>In two weeks of real use, the approval flow caught exactly one thing I cared about: Muse tried to confirm a purchase at a price higher than the one we'd discussed, and the prompt made me look twice. That's the system working as designed — not preventing disaster, just inserting a moment of attention where it counts.</p>
+            <p>The overnight shape that actually delivers is the standing instruction with a quiet success condition. &quot;Watch this flight price and tell me if it drops below $300&quot; runs while you sleep and only pings you when there is news. Vague goals stall; checked goals move. Goal plus check is the difference between a demo and a deputy.</p>
           </div>
 
-          <h2>Layer 4: Data boundaries</h2>
-          <p>Meta states that Muse data is <strong>not shared with its advertising systems</strong>, and you can <strong>opt out of having your interactions used to train</strong> its AI models. Purchases go through Stripe's Link wallet with one-time-use card numbers, so merchants — and the agent — never see your real card. You can disconnect any service anytime and ask Muse to forget specific interactions.</p>
-
-          <h2>The honest caveats</h2>
-          <p>Now the other side, because an independent publication owes you that:</p>
-          <ul>
-            <li><strong>Meta could technically look inside the Secure VM.</strong> Company policy forbids it, but Meta's own engineering leadership has acknowledged it's technically possible (reported by WIRED at launch). A <strong>Confidential VM</strong> — encrypted with a key only you hold — is planned for later this year. Until it ships, this runs on policy, not math.</li>
-            <li><strong>It's Meta.</strong> The company asking for your email, calendar, health, and financial connections is the company of Cambridge Analytica and a long regulatory rap sheet. The architecture is genuinely good; the trust question is genuinely open. Both things are true.</li>
-            <li><strong>Approvals only work if you read them.</strong> Approval fatigue is real, and a reflexive "allow" habit silently dismantles the whole system. Start with narrow permissions and widen on evidence.</li>
-            <li><strong>Disconnecting isn't forgetting.</strong> Removing a connector stops future access, but data already used can remain in memory and history. Use the forget/reset controls deliberately.</li>
-          </ul>
-
-          <h2>The practitioner's safety checklist</h2>
-          <ol>
-            <li>Connect one service at a time, only when a task needs it.</li>
-            <li>Keep approvals narrow ("allow once") until a pattern earns wider trust.</li>
-            <li>Read approval prompts — especially amounts, recipients, and unfamiliar sites.</li>
-            <li>Review the Activity log after your first few tasks to learn what normal looks like.</li>
-            <li>Opt out of training-data use if that matters to you; it's your call.</li>
-            <li>Keep credentials out of chat — use the connector flow, which keeps them in secure storage.</li>
-            <li>Know where reset is, before you need it.</li>
-          </ol>
-          <p>None of this is paranoia. It's the same posture you'd take with a talented new assistant who has keys to the office: trust, verify, and keep the important locks on your side of the desk.</p>
+          <h2>What it costs</h2>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p><strong>Background work burns your weekly allowance while you sleep.</strong> The free tier&#x27;s roughly 100 million tokens a week comes from Zuckerberg&#x27;s own Threads post; Meta&#x27;s help page only says the free allowance is &quot;limited and refreshes.&quot; Either way, it is one pool, and your overnight jobs draw from it. A watchful agent is a spending agent. If you set up nightly checks and morning digests, read the usage meter in the app during your first week. That meter is the only honest pricing page.</p>
+          </div>
+          <p>One more practical point: background goals stall quietly when a permission is missing. An overnight inbox check needs the email connector; a price watch needs the shopping access it was built for. Test each background job once while awake before you trust it overnight.</p>
 
           <h2>Quick answers</h2>
           <div class="faq-list">
             <details>
-              <summary>Is Muse safe to use?</summary>
-              <p>The architecture — Secure VM, Sentinel, approvals, invisible credential storage — is serious. The caveats: Meta could technically access the current VM (a user-keyed Confidential VM is planned), and approvals only protect you if you read them.</p>
+              <summary>Does my Muse keep working when I close the app?</summary>
+              <p>Yes. It runs on its own virtual machine in Meta's cloud, not on your phone. Meta says it keeps working in the background after you close the app and returns when something changes or it needs your approval.</p>
             </details>
             <details>
-              <summary>Can Muse see my passwords?</summary>
-              <p>No. Credentials live in secure storage the agent can't see; it works with stand-in tokens that Sentinel replaces at the network boundary after authorization.</p>
+              <summary>How do reminders work?</summary>
+              <p>Ask in plain language, one-time or recurring. They arrive as messages in the chat. You can view, edit, and cancel them from the app&#x27;s Upcoming view.</p>
             </details>
             <details>
-              <summary>Does Meta use my Muse data for ads or AI training?</summary>
-              <p>Meta says Muse data isn't shared with ad systems, and you can opt out of training use. Check the settings in your app for the current controls.</p>
+              <summary>What is a standing goal versus a reminder?</summary>
+              <p>A reminder fires on its schedule and tells you something. A goal is an open loop: the agent makes a plan, works it on its own, and checks in when there is progress or a decision to make. Both can run overnight; goals do more between pings.</p>
             </details>
             <details>
-              <summary>What happens if I disconnect a service?</summary>
-              <p>Future data exchange stops immediately, but information already used may remain in memory and conversation history. Ask Muse to forget specific items, or reset entirely for a clean slate.</p>
+              <summary>Does background work use my tokens?</summary>
+              <p>Yes, from your weekly allowance. The paid tiers (Power at $20, Maximum at $100) buy more usage, which is what you would reach for if background goals run around the clock.</p>
             </details>
           </div>
 
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: What is the Muse Secure VM?</strong></p>
+          <p>A: Your own dedicated virtual machine in Meta&#x27;s cloud, where your agent and its browser live. It is what lets the agent keep sessions, files, and work going while your phone is off. A separate Sentinel system governs what leaves the machine, and your logins sit in a credential store the agent cannot read.</p>
+          <p><strong>Q: Can I see what it did while I was away?</strong></p>
+          <p>A: The app keeps an audit trail of the agent&#x27;s actions, including what it is planning to do next. Check it in the morning. That is how you learn what your overnight jobs actually tried, and where they stalled.</p>
+          <p><strong>Q: What happens if a background task needs my approval at 3am?</strong></p>
+          <p>A: It waits. The approval gate does not auto-resolve: Meta&#x27;s design is that the agent asks before sensitive moves and returns to you when approval is needed. The task stalls until you weigh in, which is the point.</p>
+          <p><strong>Q: Are the VM specs published?</strong></p>
+          <p>A: No. The existence of the dedicated, persistent VM and the Sentinel system are Meta&#x27;s own claims. Specs, costs, and sizing are unpublished. Anything you read about core counts or instance types is community guesswork, not official.</p>
+
           <nav class="pager" aria-label="Page navigation">
-            <a href="../muse-pricing/">← Muse Pricing</a>
-            <a class="next" href="../muse-vs-chatgpt/">Next: Muse vs. ChatGPT →</a>
+            <a href="../muse-charm/">&#8592; Muse Charm explained: Meta&#x27;s keychain AI gadget</a>
+            <a class="next" href="../">The Guide &#8594;</a>
           </nav>
         </article>
 <section class="comments-section" style="max-width:44rem;margin:2.5rem auto;padding:0 1rem;">
@@ -157,11 +202,11 @@ window.fcConfigs = [{
       </div>
     </section>
 
-    <section class="section signup-band slim" aria-labelledby="signup-title">
+<section class="section signup-band slim" aria-labelledby="signup-title">
       <div class="wrap signup-grid">
         <div>
           <h2 id="signup-title">Get the field notes.</h2>
-          <p>New guides and teardowns, sent when there's something worth sharing. No spam.</p>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
         </div>
         <form class="signup-form" id="signup-form" novalidate>
           <label class="sr-only" for="email">Email address</label>
@@ -175,17 +220,15 @@ window.fcConfigs = [{
       </div>
     </section>
   </main>
-
   <footer>
     <div class="wrap footer-grid">
       <div>
-        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. 'Muse' is a trademark of Meta Platforms, Inc.</p>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
         <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
       </div>
-      <p class="copyright">© 2026 Muse Explained</p>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
     </div>
   </footer>
-
   <script>
     const form = document.getElementById('signup-form');
     const email = document.getElementById('email');
