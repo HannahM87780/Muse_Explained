@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Muse can work for minutes without saying what it is doing. If you use a screen reader, that silence can mean you get no progress signal at all. Here is the test that exposed it, why it matters more for an agent than for a chatbot, and the workaround that helped." />
+  <link rel="canonical" href="https://museexplained.com/guide/when-muse-goes-silent/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="When Muse goes silent — Muse Explained" />
+  <meta property="og:description" content="Muse can work for minutes without saying what it is doing. If you use a screen reader, that silence can mean you get no progress signal at all. Here is the test that exposed it, why it matters more for an agent than for a chatbot, and the workaround that helped." />
+  <meta property="og:url" content="https://museexplained.com/guide/when-muse-goes-silent/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>When Muse goes silent — Muse Explained</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "When Muse goes silent",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-10-27",
+  "dateModified": "2026-10-27",
+  "description": "Muse can work for minutes without saying what it is doing. If you use a screen reader, that silence can mean you get no progress signal at all. Here is the test that exposed it, why it matters more for an agent than for a chatbot, and the workaround that helped."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does Muse go silent while it is working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because long agent tasks, such as building a connector, run without narrating each step in the chat. In the best documented test, a blind user got no progress signal at all, because the working state was not exposed to her screen reader."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this only a problem for blind users?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Sighted users also report not knowing whether a quiet Muse is working, waiting, or stuck. It is worse with a screen reader, because a visual spinner or animation may be the only status signal, and it never gets announced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Has Meta responded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not that I can find. My searches on October 26, 2026 found no published Meta statement on agent progress state for screen readers. The launch week research survey this site uses recorded the same gap."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Has anything improved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Possibly, in part. The current App Store release notes for Muse, version 13.1, list better VoiceOver support in chat. Meta has not said that this covers progress announcements, and no confirming retest has been published that I found."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best workaround right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tell Muse to narrate its status, starting, waiting, and finished, and to structure long replies with headings. It remembered both requests in the reported test. That helps the replies. It does not fix unannounced state in the app itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Who reported the silence problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Taylor Arndt, a blind developer and accessibility specialist, in two Substack write ups of her launch week testing in September 2026. The clearest case was Muse building a custom connector for her team's project tool, going quiet for long stretches, and then finishing without the middle ever being announced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Was Muse actually broken during those quiet stretches?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the reported case, no. It was working, and it completed the connector. That is what makes the problem a communication failure rather than a crash: the work happened, the status did not reach the user."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Does voice mode solve this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not on the evidence I have. Voice changes how you talk to Muse. It does not, by itself, guarantee that working, waiting, and finished states are announced in a form a screen reader, or a voice user, can rely on. No source I found claims otherwise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Is this about Muse Code instead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This post is about the Muse personal agent app. The same tester later found an unreadable status indicator in Muse Code, a separate Meta product. I mention it only to keep the two apart, because the names get conflated often."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What should Meta publish to close this question?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A short, specific statement would do it: which agent states are announced to VoiceOver and TalkBack, in which app versions, and how a user can confirm it. Until that exists, or a screen reader tester confirms the fix in a retest, this page will keep the question marked open."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <figure style="margin:0;line-height:0;">
+    <img src="../../assets/max-blog-header.jpg" alt="Max, the writer behind Muse Explained, at his desk with a laptop and a cup of coffee" width="1920" height="720" style="display:block;width:100%;height:auto;" />
+  </figure>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Troubleshooting</p>
+        <h1>When Muse goes silent</h1>
+        <p class="lede">Muse can work for minutes without saying what it is doing. If you use a screen reader, that silence can mean you get no progress signal at all. Here is the test that exposed it, why it matters more for an agent than for a chatbot, and the workaround that helped.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: October 26, 2026.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+          <p>Every agent has a quiet phase. You hand it a job, it goes off to browse, build, or connect something, and for a while there is nothing to read. For most people that phase is annoying. For a blind user it can be information free, because the one signal that work is happening may be a visual spinner that their screen reader never announces. That is the complaint at the center of this post, and it comes from a tester who wanted Muse to succeed.</p>
+
+          <h2>The test where the silence happened</h2>
+          <p>Taylor Arndt is a blind developer and accessibility specialist who tested Muse in its launch weeks and wrote up two long sessions. In the second, published September 24, 2026, she and two colleagues connected Muse to real work systems after Meta Connect. At one point she asked Muse to build a custom connector for Start Testing, the project tool her own team uses, because Meta does not ship a built in one.</p>
+          <p>Muse started working on the connector and then, in her account, became very quiet. Too quiet. There were stretches where she genuinely could not tell whether it was still doing something, whether she had closed part of the flow, or whether it had simply stopped responding. A colleague testing alongside her noticed the same problem. Eventually a Connect button appeared, the authentication worked, and Muse reported that the connector and its skills were ready.</p>
+          <p>So the job finished. The problem was everything in the middle, because in the middle there was no usable status.</p>
+          <p>Her first session, earlier that same week, had already surfaced related problems: text fields that behaved oddly with VoiceOver, chat messages with no heading structure to navigate by, and no clear sound or announcement when Muse finished a job or needed her input. The baseline research this site uses, a survey of the questions people kept asking about Muse in launch week, filed the whole thing under one question: why does Muse go silent while working, with no progress shown?</p>
+
+          <h2>Why silence hits screen reader users hardest</h2>
+          <p>Arndt put the mechanism plainly. A sighted user might notice a spinner, an animation, or some other visual indication that something is happening. If that state is not exposed to the screen reader, she wrote, I get silence. And silence is ambiguous: is it working, did I break it, is it waiting for me, did something appear somewhere else on the screen?</p>
+          <p>That list of questions is the whole issue. None of them is about impatience. Each one is a different action. If Muse is working, the right move is to wait. If it is waiting for approval, the right move is to find the prompt and read it carefully. If it failed, the right move is to retry or stop. A progress signal that only exists visually does not let a screen reader user choose between those moves, because it does not reach them at all.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>There is an irony in here worth naming. Muse itself reads web pages through accessibility tree snapshots, the same kind of structured, labelled view that screen readers use. The agent depends on other people&#x27;s sites exposing their state and controls properly. Its own interface, in this test, did not return the favour for its working state.</p>
+          </div>
+
+          <h2>This is not just an accessibility problem</h2>
+          <p>Sighted users hit a milder version of the same wall. A long task with no narration leaves anyone guessing whether to wait, nudge, or start over, and the research survey noted the silent agent as a sighted user experience complaint as well.</p>
+          <p>The stakes still rise with capability, and Arndt made that point directly. A chatbot can get away with a confusing loading state. An agent is doing more: building integrations, working in other systems, handling credentials, and asking for approvals. The more Muse can do on your behalf, and the longer it works out of sight, the more its status messages are the interface. Her list of what she needs is simple and complete: real headings, properly named controls, predictable focus, status messages, a signal when the agent has finished, a signal when it is waiting, clarity about what she is approving, and a way to review what it did afterward.</p>
+
+          <h2>What helped, and what it does not fix</h2>
+          <p>The most useful finding in her test was a workaround, and it came from the agent itself. After the testers talked to Muse about the silence, it became better about saying when it was doing things. Separately, she told Muse that she is blind and asked it to start its responses with headings. It did, and it kept doing it, because the preference was stored in its memory. Headings let her jump through a long reply section by section instead of listening to the whole thing in one pass.</p>
+          <p>Use both ideas if they help you. Tell your Muse, early, to announce what it is starting, what it is waiting on, and when it has finished, and tell it how you want replies structured. In my experience covering this product, stated preferences like that are one of the things Muse is genuinely good at remembering.</p>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>A workaround is not a fix, and Arndt said so herself. Telling the agent to narrate does not repair an unlabelled button or an unannounced status in the app, and a preference stored in memory can only shape the replies, not the interface around them. Her line is the right standard: make the product accessible by default, and then let the agent learn how the individual user prefers to work.</p>
+          </div>
+
+          <h2>Has Meta fixed it?</h2>
+          <p>I do not have a confirmed yes, and I looked. The launch week research survey recorded no Meta response to this complaint, and my searches on October 26, 2026 found no published Meta statement about agent progress state and screen readers specifically.</p>
+          <p>There is one hopeful sign, and it is worth reporting accurately. The App Store listing for Muse currently shows version 13.1, released two days before this check, and its release notes include better VoiceOver support in chat. That is Meta working on VoiceOver, in writing, in a shipped update. What it does not say is that working, waiting, and finished states are now announced, and I found no follow up test from Arndt confirming that the connector building silence is gone. Those are different claims, and this page will only make the second one when a tester with a screen reader reports it.</p>
+          <p>One distinction to keep straight: Arndt later tested Muse Code, Meta&#x27;s separate coding tool, and found a status indicator there that her screen reader could not read either. That is a different product from the Muse personal agent covered here, so I am not counting it as evidence about this app. I am counting it as a reason to keep asking the same question of every Muse surface.</p>
+
+          <h2>What to do when your Muse goes quiet</h2>
+          <p>First, ask it directly, in the chat: are you still working, waiting for me, or finished? A plain status request is the fastest way to turn silence into a sentence you can act on, and it is the move that improved things in the test above.</p>
+          <p>Second, set your narration and format preferences once, at the start, rather than repeating them per task. Ask for progress updates as it works, a clear finished or failed message at the end, and headings in long replies if you navigate by headings.</p>
+          <p>Third, check the activity log. Meta&#x27;s own App Store description says Muse keeps a full activity log of what it has done. If a task went quiet and then finished, the log is where you can review what actually happened before you trust the result.</p>
+          <p>Fourth, do not approve what you cannot review. If an approval prompt reaches you without enough readable context to know what you are approving, stop and ask Muse to explain the action in the chat first. An approval you cannot read is not a safety check. It is a rubber stamp.</p>
+
+          <h2>Quick answers</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Why does Muse go silent while it is working?</summary>
+              <p>Because long agent tasks, such as building a connector, run without narrating each step in the chat. In the best documented test, a blind user got no progress signal at all, because the working state was not exposed to her screen reader.</p>
+            </details>
+            <details>
+              <summary>Is this only a problem for blind users?</summary>
+              <p>No. Sighted users also report not knowing whether a quiet Muse is working, waiting, or stuck. It is worse with a screen reader, because a visual spinner or animation may be the only status signal, and it never gets announced.</p>
+            </details>
+            <details>
+              <summary>Has Meta responded?</summary>
+              <p>Not that I can find. My searches on October 26, 2026 found no published Meta statement on agent progress state for screen readers. The launch week research survey this site uses recorded the same gap.</p>
+            </details>
+            <details>
+              <summary>Has anything improved?</summary>
+              <p>Possibly, in part. The current App Store release notes for Muse, version 13.1, list better VoiceOver support in chat. Meta has not said that this covers progress announcements, and no confirming retest has been published that I found.</p>
+            </details>
+            <details>
+              <summary>What is the best workaround right now?</summary>
+              <p>Tell Muse to narrate its status, starting, waiting, and finished, and to structure long replies with headings. It remembered both requests in the reported test. That helps the replies. It does not fix unannounced state in the app itself.</p>
+            </details>
+          </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: Who reported the silence problem?</strong></p>
+          <p>A: Taylor Arndt, a blind developer and accessibility specialist, in two Substack write ups of her launch week testing in September 2026. The clearest case was Muse building a custom connector for her team&#x27;s project tool, going quiet for long stretches, and then finishing without the middle ever being announced.</p>
+          <p><strong>Q: Was Muse actually broken during those quiet stretches?</strong></p>
+          <p>A: In the reported case, no. It was working, and it completed the connector. That is what makes the problem a communication failure rather than a crash: the work happened, the status did not reach the user.</p>
+          <p><strong>Q: Does voice mode solve this?</strong></p>
+          <p>A: Not on the evidence I have. Voice changes how you talk to Muse. It does not, by itself, guarantee that working, waiting, and finished states are announced in a form a screen reader, or a voice user, can rely on. No source I found claims otherwise.</p>
+          <p><strong>Q: Is this about Muse Code instead?</strong></p>
+          <p>A: No. This post is about the Muse personal agent app. The same tester later found an unreadable status indicator in Muse Code, a separate Meta product. I mention it only to keep the two apart, because the names get conflated often.</p>
+          <p><strong>Q: What should Meta publish to close this question?</strong></p>
+          <p>A: A short, specific statement would do it: which agent states are announced to VoiceOver and TalkBack, in which app versions, and how a user can confirm it. Until that exists, or a screen reader tester confirms the fix in a retest, this page will keep the question marked open.</p>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../free-needs-a-credit-card/">&#8592; &quot;Free&quot; needs a credit card: how Muse&#x27;s free tier really works</a>
+            <a class="next" href="../">The Guide &#8594;</a>
+          </nav>
+        </article>
+<section class="comments-section" style="max-width:44rem;margin:2.5rem auto;padding:0 1rem;">
+<h2>Comments</h2>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
+<div id="fastcomments-widget"></div>
+<script>
+window.fcConfigs = [{
+    "tenantId": "GfnpP225c2I2"
+}];
+</script>
+</section>
+      </div>
+    </section>
+
+<section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
+    </div>
+  </footer>
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9f51b72e2e74d26a96ec4c925913152"}'></script><!-- End Cloudflare Web Analytics --></body>
+</html>
+
+
+
+
+
+
