@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Poppy 1.0 asks a business for one file at a fixed address, and only two of its fields are required. This post prints the field list from the 1.0 specification itself, walks the four kit milestones, and runs the kit validator against the specification&#x27;s own example document: offline Foundation checks, 7 passed, 0 failed, 7 skipped, on November 15, 2026. No live company deployment was validated, and the protocol&#x27;s own demo sites returned Not Found the same day." />
+  <link rel="canonical" href="https://museexplained.com/guide/inside-poppy-json-what-a-business-publishes-poppy-1-0/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Inside poppy.json: What a Business Actually Publishes for Poppy 1.0, Checked on personalagentprotocol.org and the Validator Itself — Muse Explained" />
+  <meta property="og:description" content="Poppy 1.0 asks a business for one file at a fixed address, and only two of its fields are required. This post prints the field list from the 1.0 specification itself, walks the four kit milestones, and runs the kit validator against the specification&#x27;s own example document: offline Foundation checks, 7 passed, 0 failed, 7 skipped, on November 15, 2026. No live company deployment was validated, and the protocol&#x27;s own demo sites returned Not Found the same day." />
+  <meta property="og:url" content="https://museexplained.com/guide/inside-poppy-json-what-a-business-publishes-poppy-1-0/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>Inside poppy.json: What a Business Actually Publishes for Poppy 1.0, Checked on personalagentprotocol.org and the Validator Itself — Muse Explained</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Inside poppy.json: What a Business Actually Publishes for Poppy 1.0, Checked on personalagentprotocol.org and the Validator Itself",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-11-16",
+  "dateModified": "2026-11-16",
+  "description": "Poppy 1.0 asks a business for one file at a fixed address, and only two of its fields are required. This post prints the field list from the 1.0 specification itself, walks the four kit milestones, and runs the kit validator against the specification's own example document: offline Foundation checks, 7 passed, 0 failed, 7 skipped, on November 15, 2026. No live company deployment was validated, and the protocol's own demo sites returned Not Found the same day."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where does poppy.json live?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At https://<domain>/.well-known/poppy.json, served over HTTPS as application/json. Specification section 3: if the company has no poppy.json, it is not part of the protocol."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which poppy.json fields are required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two: protocol_version and organization, per the section 3.1 field table. The company must also list at least one of agent, apis, or web. Everything else in the table is optional, except auth.issuer, which is required when the domain's protected resource metadata lists more than one authorization server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the smallest working poppy.json?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One with protocol_version, organization, and web alone. The guides call a web-only file the cheapest path for a company whose website already supports sign-in, and a personal agent will use the website, not the APIs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Poppy validator a website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is a command-line program in the company implementation kit on GitHub, run with Node 22.18 or later. Its commands are survey, check, keygen, and report, and it checks a deployment in four milestone groups: Foundation, Interfaces, Sign-in, and Extensions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Did the specification's own example pass the validator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, in the offline run this site did on November 15, 2026: Foundation checks, 7 passed, 0 failed, 7 skipped. The skipped checks need a live host. No live company deployment was validated in this post, and the protocol's demo sites returned Not Found the same day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a poppy.json mean Muse can buy things at that company?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The file declares channels and scopes. Checkout exists only through the UCP extension, which the company must support and declare, and the protocol's own roadmap still lists payments as an open topic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Has any Poppy partner announced 1.0 in its own name?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not in the November 15, 2026 checks. No announcement from Mercury, Synchrony, Turkish Airlines, or Shopify in its own name was found. Synchrony's own Poppy items are from October 2026, before the 1.0 release."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Who publishes poppy.json, Sierra, Meta, or the business itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The business itself, on its own domain. Poppy is Sierra's Personal Agent Protocol, published with industry partners including Meta. Muse's post, read in full for Part 1, describes the same file from the business side: a business publishes poppy.json to tell personal agents what it offers and how to reach it. The implementation kit is for companies, and the kit page notes a kit for personal agents has not been published yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What happens on a site with no poppy.json?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the specification's terms, that company is not part of the protocol, and a personal agent must not assume any service, endpoint, or method there. Sierra's launch post says Muse looks for Poppy first on every site it visits. What Muse does next on a site with no file is not described in either launch post, and no in-app sighting had been found by November 15, 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Why does auth.scopes use descriptions instead of a plain list?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because that is the form section 3.1 defines: scope descriptions keyed by scope name, in the same form as an OpenAPI OAuth 2.0 security scheme. The validator's schema check enforces that form. A company also lists scopes a second way, in scopes_supported in its protected resource metadata or its issuer's metadata, and the agent uses the union of the lists."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: What does the validator not check?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two limits are printed in its own README. Sign-in is checked only where no real sign-in is needed, and the rest is checked by hand against the kit checklist. Extensions are checked only from the outside, as what a run declaring no extensions can see. It also never gets a token, never signs anyone in, and never joins a browser to a Session, by design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Can this site run the validator against a named company for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The survey command is read-only and sends only GET requests, so it is the safe one to run against a live domain. This post ran no live check, because the November 23 recheck is the dated place for the first named one. The full check mode starts real Sessions and sends test messages, and the README prefers a test environment for it, so it is not a tool to point at a company that has not asked for the test."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Is poppy.json the same thing as a Muse connector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, and Part 1 kept the two apart on Muse's own text. A connector links a specific service into Muse, through Meta's review for verified connectors. poppy.json is a file any company publishes on its own site under an open protocol, with no Meta review named in the specification or the kit. A company can do either, both, or neither."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: When will this site check Poppy again?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "November 23, 2026, for the two open ledger rows: an in-app sighting of Poppy behaviour in Muse, and a partner announcement in a partner's own name. The same check will run the validator's survey command against the first live company poppy.json it can name, and publish the result with that date either way."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <figure style="margin:0;line-height:0;">
+    <img src="../../assets/max-blog-header.jpg" alt="Max, the writer behind Muse Explained, at his desk with a laptop and a cup of coffee" width="1920" height="720" style="display:block;width:100%;height:auto;" />
+  </figure>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Shopping</p>
+        <h1>Inside poppy.json: What a Business Actually Publishes for Poppy 1.0, Checked on personalagentprotocol.org and the Validator Itself</h1>
+        <p class="lede">Only two fields in poppy.json are required. The rest of this post is the field list from the 1.0 specification itself, the four kit milestones in order, and one validator run: offline Foundation checks against the specification&#x27;s own example document on November 15, 2026, 7 passed, 0 failed, 7 skipped. No live company deployment was validated. The protocol&#x27;s own demo sites returned Not Found the same day.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: November 15, 2026.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+
+          <h2>Poppy Promise Ledger, Part 2</h2>
+          <div class="callout field-note">
+            <span class="label">Poppy Promise Ledger, Part 2</span>
+            <p>This is Part 2 of this site&#x27;s Poppy coverage. Part 1, published November 15, 2026, reported the launch claim from Sierra&#x27;s post of November 13: Poppy is on for everyone who uses Muse, and Muse looks for Poppy first on every site it visits. That post named the check this one runs: read the implementation file itself, on the protocol&#x27;s own site, and test it against the protocol&#x27;s own validator.</p>
+            <ul>
+              <li>Launch claim, November 13, 2026: Sierra&#x27;s post, read in full. Poppy 1.0 published at personalagentprotocol.org, Shopify enabled for every merchant, Mercury, Synchrony, and Turkish Airlines named as going live, more than 100 design partners in total.</li>
+              <li>Implementation kit checked, this post, November 15, 2026: the 1.0 specification, the guides, the extensions pages, and the company implementation kit at personalagentprotocol.org, all read in full, plus the validator in the kit&#x27;s GitHub repository, run offline against the specification&#x27;s own example document. Result in the validator section below.</li>
+              <li>Still open, checked November 15, 2026: no in-app sighting of Poppy behaviour in Muse, and no announcement from Mercury, Synchrony, Turkish Airlines, or Shopify in its own name. DuckDuckGo checks on November 15 found neither. Synchrony&#x27;s own Poppy items are both from October 2026, before 1.0: a blog post of October 15 and an 8-K of October 20 about joining as a design partner.</li>
+              <li>Next check: November 23, 2026, for the two open rows above, and for a live company poppy.json this site can run through the validator&#x27;s survey command and print by name.</li>
+            </ul>
+          </div>
+
+          <h2>The file, and where it has to sit</h2>
+          <p>A company joins Poppy by publishing one JSON document at a fixed address: https://&lt;domain&gt;/.well-known/poppy.json, served over HTTPS as application/json. The specification, section 3, is blunt about the alternative: if the company has no poppy.json, it is not part of the protocol.</p>
+          <p>The file tells a personal agent four things: who the company is, how to start a Session with it, how sign-in works, and which channels it offers, meaning its website, its APIs, or its own company agent. The agent learns the sign-in issuer a second way, from standard OAuth metadata. The company publishes protected resource metadata at /.well-known/oauth-protected-resource (RFC 9728), whose authorization_servers list names the issuer, and the agent then follows that issuer&#x27;s OAuth server metadata (RFC 8414) for endpoints and sign-in methods.</p>
+          <p>Two rules in section 3 govern everything the file says. First: only what a document declares can be relied on. A personal agent must not assume a service, an endpoint, or a method that the document does not declare. Second, from section 3.1: a field listed as optional can be absent, a required field must be present, a field that is present must be the right type, and a personal agent must ignore unknown fields. That last rule is why the exact forms in the next section are worth printing. A field written in the wrong form is not a style error. It is a field the agent cannot use as written.</p>
+
+          <h2>Required: two fields, plus one channel</h2>
+          <p>The section 3.1 field table marks exactly two fields as required, and one group as a choice a company cannot skip.</p>
+          <ul>
+            <li>protocol_version. Required. The protocol version this document follows, written as major.minor. For this specification it is &quot;1.0&quot;. A personal agent uses the document only if the version is compatible with one it implements, and it must check this field first.</li>
+            <li>organization. Required. The company&#x27;s display name, its domain, and an optional logo_uri. The domain must be the host that serves the document, after any redirects. That check stops a document copied to another domain from speaking for the company.</li>
+            <li>At least one of agent, apis, or web. A company must offer at least one channel. agent lists the company agent&#x27;s conversation protocols, each with a type, an HTTPS endpoint, and a description. apis lists APIs, each with a type, a url, and a description. web is the company&#x27;s website, with an optional browser_session_endpoint where an agent&#x27;s browser joins a Session.</li>
+          </ul>
+          <p>That is the whole required list. A website-only company can meet it with protocol_version, organization, and web. The guides say so in plain terms: if your website already supports sign-in, the cheapest path is to publish a poppy.json that lists only web. A personal agent will then use the website, not the APIs.</p>
+
+          <h2>Optional fields in section 3.1: auth, tasks, extensions, and supported_versions</h2>
+          <ul>
+            <li>supported_versions. The other protocol versions the company serves, each mapped to the URL of that version&#x27;s document. It is an object, a map from version to URL, not a list. If omitted, the company supports only protocol_version. Each URL must sit on the same host that served poppy.json, and every version&#x27;s document must carry the same organization.domain and the same issuer.</li>
+            <li>auth. The company&#x27;s sign-in details. Its parts are issuer, disabled, scopes, and scope_hints, each covered below.</li>
+            <li>auth.issuer. Conditional, not simply optional. If the domain&#x27;s protected resource metadata lists more than one authorization server, auth.issuer selects the one personal agents use, and it must be in that list. With one server, the company may leave it out.</li>
+            <li>auth.disabled. Defaults to false. Set to true, it tells personal agents the company offers no sign-in even though it has an issuer, and an agent must not start sign-in with that company.</li>
+            <li>auth.scopes. Scope descriptions, keyed by scope name. It is an object: each scope name maps to a written description of what that scope allows, in the same form as the scopes of an OAuth 2.0 security scheme in OpenAPI. In the specification&#x27;s example, orders:read is described as &quot;See your orders, returns, and bookings,&quot; and orders:write covers exchanges, returns, and booking changes.</li>
+            <li>auth.scope_hints. Hints about what each scope allows, keyed by scope name, with two named parts: changes and personal_data. In the example, orders:read carries changes &quot;none&quot; and personal_data true, and orders:write carries changes &quot;irreversible&quot; and personal_data true. A business writing its file has to grade its own scopes this way, in public, before any agent asks for them.</li>
+            <li>web.disabled. Defaults to false. True means the company asks personal agents not to browse its website, and to use its company agent and APIs instead.</li>
+            <li>web.unscoped. Defaults to false. True means the website does not apply the company&#x27;s other scopes, so the poppy:browser-sign-in scope gives the account&#x27;s full access there.</li>
+            <li>tasks. An endpoint, an HTTPS URL, where personal agents get the tasks the company chose not to offer through the protocol, the skills it publishes, and where to send feedback.</li>
+            <li>extensions. The extensions the company supports, keyed by name, with an entry for each version it supports. Section 3.3 adds the form: each name maps to a list of version entries, plain names are reserved for extensions defined with the protocol, and anyone else must start an extension name with a domain they control.</li>
+          </ul>
+          <p>One form warning, because it is the easiest mistake in the file: agent protocols and apis entries do not use the same word for their address. An agent protocol entry carries an endpoint. An apis entry carries a url. The validator&#x27;s schema check enforces the section 3.1 forms, as the run below shows.</p>
+
+          <h2>The specification&#x27;s own example, in short</h2>
+          <p>Section 3 prints a complete example document for a fictional Example Company at example.com. Its shape, with descriptions shortened here and the full text on the specification page:</p>
+          <ul>
+            <li>protocol_version &quot;1.0&quot;, and no supported_versions, so 1.0 is the only version offered.</li>
+            <li>organization: name &quot;Example Company&quot;, domain &quot;example.com&quot;, and a logo_uri.</li>
+            <li>auth with no issuer named, scopes as an object with four entries (orders:read, orders:write, addresses, and poppy:browser-sign-in), and scope_hints grading the first three.</li>
+            <li>agent with one protocol entry, type &quot;poppy&quot;, at an HTTPS conversations endpoint.</li>
+            <li>web with a browser_session_endpoint, tasks with an endpoint, and apis with two entries, one openapi and one mcp, each with a url.</li>
+            <li>No extensions entry at all, which the field table allows.</li>
+          </ul>
+          <p>This is the document the validator run below used, copied from the specification page on November 15, 2026.</p>
+
+          <h2>The validator is not a web page</h2>
+          <p>Both launch posts point at a validator, and a reader could reasonably expect a form on a website: paste a domain, get a grade. That is not what the kit ships. There is no validator page or form on personalagentprotocol.org. The validator is a command-line program inside the company implementation kit, at validate/index.ts in the kit&#x27;s skill folder on GitHub. Its README calls it the &quot;Poppy Company validator.&quot; It needs Node 22.18 or later, has no dependencies and no install step, and it acts as a test personal agent against a company&#x27;s live deployment.</p>
+          <p>Its commands, in the README&#x27;s terms: survey &lt;url&gt; is read-only, reports what a domain already publishes, and sends only GET requests. check [url] runs the checks and writes results to .poppy/last-results.json. keygen creates the test personal agent identity, including a private key file the README says never to host or commit, plus agent.json and jwks.json files the tester hosts at a public HTTPS address. report drafts an implementation report from the latest results. Exit codes: 0 when no MUST check fails, 1 when one does, 2 for a usage error. A SHOULD that is not met is a warning and does not change the exit code.</p>
+          <p>What it checks is grouped by the kit&#x27;s four milestones, and each check quotes the requirement it tests:</p>
+          <ul>
+            <li>Milestone 1, Foundation: discovery (the poppy.json itself), metadata (the issuer, from the protected resource metadata, and its OAuth server metadata), session (the Session header at resources), and assertion (client assertions at the token endpoint).</li>
+            <li>Milestone 2, Interfaces: OpenAPI documents, MCP servers, the conversation endpoint, the tasks endpoint, the feedback endpoint, and the browser-session endpoint.</li>
+            <li>Milestone 3, Sign-in: only what needs no real sign-in, such as an unknown sign_in_id at the token endpoint. The README states the rest of sign-in is checked by hand against the kit checklist.</li>
+            <li>Milestone 4, Extensions: only what a run that declares no extensions sees, meaning no extension content, including operations, in any conversation response.</li>
+          </ul>
+          <p>The safety limits are printed in the same README. The validator never calls an API operation other than the GET named with its probe option, never gets a token, never signs anyone in, and never joins a browser to a Session. Every URL must be HTTPS, a run makes at most 400 requests, and conversation tests carry only the text &quot;Validator test message. Please ignore.&quot; It also works against production, the README notes, but it starts real Sessions and sends test messages, so a test environment is preferred.</p>
+
+          <h2>The run this site actually did</h2>
+          <p>On November 15, 2026, this site cloned the kit from its GitHub repository and ran the validator in its offline mode, check --file, against the specification&#x27;s own Example Company document, copied above. Offline mode checks a local poppy.json against the schema and field rules, with no network requests.</p>
+          <p>The result, Foundation milestone: 7 passed, 0 failed, 0 warnings, 7 skipped. The checks that passed include the document being a JSON object, its fields having the forms section 3.1 describes, the protocol version matching the version this validator checks, at least one of agent, apis, or web being present, and the sign-in and browsing consistency checks. The 7 skipped checks are the network ones: HTTPS serving at the well-known path, redirect behaviour, the supported_versions documents, and whether organization.domain matches the host that served the file. Offline, there is no host, so the validator says so instead of guessing.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>The pass proves less than it looks like, and this post keeps it at that size. It shows the specification&#x27;s own example is written in the forms the kit&#x27;s schema enforces, which was not a given: the file uses endpoint for agent protocols and url for APIs, an object for scopes, and an object for scope_hints. Any of those written the other way fails the schema check.</p>
+          </div>
+          <p>It does not show that any real company&#x27;s deployment passes, because no live company file was checked in this run. The full check mode needs a live deployment and a hosted test-agent identity, and the protocol&#x27;s own demo addresses gave this site nothing to test against: on November 15, 2026, the demo agent site, its /.well-known/poppy.json, and the protocol inspector site all returned Not Found.</p>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>Third-party web pages that call themselves Poppy validators turned up in the November 15 searches. They are not the kit validator, they are not linked from the specification or the kit page, and this site did not use them. A business checking its own file should run the program from the kit&#x27;s repository, in a test environment, and read the README&#x27;s key-handling note before the keygen step, not after it.</p>
+          </div>
+
+          <h2>Staged adoption: website first, sign-in last</h2>
+          <p>The guides page for companies orders the work in one sentence: each capability is a separate choice, so start with the website, then add the agent, the APIs, and the sign-in as you need them. The kit turns the same order into four milestones, and tells the implementer to run the validator after each one, since it checks that milestone&#x27;s requirements and lists what is missing.</p>
+          <ol>
+            <li>Foundation. Publish a poppy.json that lists a website and any APIs the company already has. Publish the OAuth server metadata. Verify the Session header at resources.</li>
+            <li>Interfaces. Connect the existing interfaces: OpenAPI, MCP, conversations, tasks, feedback, and the browser session. Test them.</li>
+            <li>Sign-in. Mediated Sign-In, authorization code with PKCE, direct sign-in, and device sign-in. Test sign-in.</li>
+            <li>Extensions. UCP checkout, operations, links, disclosures, and browser control. Test the extensions.</li>
+          </ol>
+          <p>The order has a practical consequence for Muse users. The first stage a business can ship is a file that points at its ordinary website, with no sign-in and no API. That is also the stage with the least for an agent to do beyond browsing. A partner count, including the 100-plus figure in Sierra&#x27;s post, does not say which milestone any named company has reached, and neither launch post breaks the count down by stage.</p>
+
+          <h2>Sign-in and Sessions, as the file declares them</h2>
+          <p>Sign-in is OAuth 2.0. A company uses its existing OAuth server if it has one, and the specification says a company without one can use the server in the kit skill. The personal agent uses the authorization code flow with PKCE, requests the scopes listed in auth.scopes, and signs the user in on the company&#x27;s own page. Direct Sign-In is the user approving access in their browser. Device Sign-In is a link and a code the agent shows the user, for sign-in on any device. Mediated Sign-In, a first-party app flow, is already marked as retiring: the extension page says it will stop working on March 17, 2027, and the roadmap lists dropping it.</p>
+          <p>Separate from sign-in, every request carries a Session. A Session is a signed JWT sent in the Poppy-Session header, naming the session and a user ID that is different at each company, signed with a short-lived key. ES256 is the baseline signature and PS384 is recommended, and client assertions must expire at most five minutes after they are issued. Section 11 of the specification opens its security part with a sentence a business should read before it celebrates the file: a company must not trust a personal agent. It verifies Sessions and checks scopes instead.</p>
+
+          <h2>The extensions a file can name</h2>
+          <p>Six extensions are published with 1.0, each with its own page, and a company lists the ones it supports under extensions in poppy.json.</p>
+          <ul>
+            <li>ucp: checkout through the Universal Commerce Protocol. The company declares a checkout endpoint, the agent sends a checkout request, and the company returns a checkout URL. The extension page states the boundary in one line: UCP is a protocol for checkout, not a payment method, and the company must support UCP checkout to use it.</li>
+            <li>operations: the company exposes named operations, such as a way to place an order, each with a name, a description, and parameters.</li>
+            <li>links: the company provides links to the agent, each with a url and an optional title.</li>
+            <li>disclosures: the company discloses information to the agent, such as its terms of service, as items with a url and a title.</li>
+            <li>browser-control: the agent can ask the browser to do things, such as click a button or fill in a form.</li>
+            <li>mediated-sign-in: the company can ask the user to sign in through Mediated Sign-In. Retiring March 17, 2027, per its own page.</li>
+          </ul>
+          <p>The roadmap adds what 1.0 does not have: signed approvals, self-hosted personal agents, dropping Mediated Sign-In after its retirement date, and payments. Payments being a roadmap topic, in the protocol&#x27;s own document, is the check on any claim that Poppy 1.0 settles how agents pay.</p>
+
+          <h2>Follow-through since November 13: nothing new in its own name</h2>
+          <p>This site checked on November 15, 2026 for the three follow-ups the launch left open, using DuckDuckGo. A Meta primary beyond the Muse blog post: none found. Searches against Meta&#x27;s own domains returned no Poppy page, and wider results were the Sierra post and secondary coverage. An in-app sighting of Poppy behaviour in Muse: none found. No screenshot, user report, or app interface evidence appeared. One Gate.com result dated November 15 repeats the claim that Muse searches for Poppy by default, but opening it landed on a compliance page, so it is carried here as an unverified snippet and nothing more. A partner announcement in the partner&#x27;s own name: none found for Mercury, Synchrony, Turkish Airlines, or Shopify since November 13. The live column for Poppy still rests on Sierra&#x27;s post and Muse&#x27;s post, both dated November 13, both read in full for Part 1.</p>
+          <p>Three standing items hold flat beside this post. Expedia in Muse is still hotels only on the Skift record of November 9, with flights not verified. Spaces sharing is still not live: Meta described it on November 6 as exploring ways to share. Muse calling businesses, published on this site on November 14, is paid and US only. A poppy.json on a company&#x27;s site changes none of those rows for a Muse user today, because no source checked shows what a Muse user sees when Muse finds one.</p>
+
+          <h2>The question for readers</h2>
+          <p>If a business you use published a poppy.json tomorrow, what should Muse be allowed to do with it: browse, book, or buy? And what should it never do without asking first? The file itself forces a version of that question on the business, in auth.scope_hints, where orders:write has to be graded as a change that cannot be undone. Answers that name the action and the line, for a named kind of business, will shape the November 23 recheck more than another partner count will.</p>
+
+          <h2>Quick answers</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Where does poppy.json live?</summary>
+              <p>At https://&lt;domain&gt;/.well-known/poppy.json, served over HTTPS as application/json. Specification section 3: if the company has no poppy.json, it is not part of the protocol.</p>
+            </details>
+            <details>
+              <summary>Which poppy.json fields are required?</summary>
+              <p>Two: protocol_version and organization, per the section 3.1 field table. The company must also list at least one of agent, apis, or web. Everything else in the table is optional, except auth.issuer, which is required when the domain&#x27;s protected resource metadata lists more than one authorization server.</p>
+            </details>
+            <details>
+              <summary>What is the smallest working poppy.json?</summary>
+              <p>One with protocol_version, organization, and web alone. The guides call a web-only file the cheapest path for a company whose website already supports sign-in, and a personal agent will use the website, not the APIs.</p>
+            </details>
+            <details>
+              <summary>Is the Poppy validator a website?</summary>
+              <p>No. It is a command-line program in the company implementation kit on GitHub, run with Node 22.18 or later. Its commands are survey, check, keygen, and report, and it checks a deployment in four milestone groups: Foundation, Interfaces, Sign-in, and Extensions.</p>
+            </details>
+            <details>
+              <summary>Did the specification&#x27;s own example pass the validator?</summary>
+              <p>Yes, in the offline run this site did on November 15, 2026: Foundation checks, 7 passed, 0 failed, 7 skipped. The skipped checks need a live host. No live company deployment was validated in this post, and the protocol&#x27;s demo sites returned Not Found the same day.</p>
+            </details>
+            <details>
+              <summary>Does a poppy.json mean Muse can buy things at that company?</summary>
+              <p>No. The file declares channels and scopes. Checkout exists only through the UCP extension, which the company must support and declare, and the protocol&#x27;s own roadmap still lists payments as an open topic.</p>
+            </details>
+            <details>
+              <summary>Has any Poppy partner announced 1.0 in its own name?</summary>
+              <p>Not in the November 15, 2026 checks. No announcement from Mercury, Synchrony, Turkish Airlines, or Shopify in its own name was found. Synchrony&#x27;s own Poppy items are from October 2026, before the 1.0 release.</p>
+            </details>
+          </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: Who publishes poppy.json, Sierra, Meta, or the business itself?</strong></p>
+          <p>A: The business itself, on its own domain. Poppy is Sierra&#x27;s Personal Agent Protocol, published with industry partners including Meta. Muse&#x27;s post, read in full for Part 1, describes the same file from the business side: a business publishes poppy.json to tell personal agents what it offers and how to reach it. The implementation kit is for companies, and the kit page notes a kit for personal agents has not been published yet.</p>
+          <p><strong>Q: What happens on a site with no poppy.json?</strong></p>
+          <p>A: On the specification&#x27;s terms, that company is not part of the protocol, and a personal agent must not assume any service, endpoint, or method there. Sierra&#x27;s launch post says Muse looks for Poppy first on every site it visits. What Muse does next on a site with no file is not described in either launch post, and no in-app sighting had been found by November 15, 2026.</p>
+          <p><strong>Q: Why does auth.scopes use descriptions instead of a plain list?</strong></p>
+          <p>A: Because that is the form section 3.1 defines: scope descriptions keyed by scope name, in the same form as an OpenAPI OAuth 2.0 security scheme. The validator&#x27;s schema check enforces that form. A company also lists scopes a second way, in scopes_supported in its protected resource metadata or its issuer&#x27;s metadata, and the agent uses the union of the lists.</p>
+          <p><strong>Q: What does the validator not check?</strong></p>
+          <p>A: Two limits are printed in its own README. Sign-in is checked only where no real sign-in is needed, and the rest is checked by hand against the kit checklist. Extensions are checked only from the outside, as what a run declaring no extensions can see. It also never gets a token, never signs anyone in, and never joins a browser to a Session, by design.</p>
+          <p><strong>Q: Can this site run the validator against a named company for me?</strong></p>
+          <p>A: The survey command is read-only and sends only GET requests, so it is the safe one to run against a live domain. This post ran no live check, because the November 23 recheck is the dated place for the first named one. The full check mode starts real Sessions and sends test messages, and the README prefers a test environment for it, so it is not a tool to point at a company that has not asked for the test.</p>
+          <p><strong>Q: Is poppy.json the same thing as a Muse connector?</strong></p>
+          <p>A: No, and Part 1 kept the two apart on Muse&#x27;s own text. A connector links a specific service into Muse, through Meta&#x27;s review for verified connectors. poppy.json is a file any company publishes on its own site under an open protocol, with no Meta review named in the specification or the kit. A company can do either, both, or neither.</p>
+          <p><strong>Q: When will this site check Poppy again?</strong></p>
+          <p>A: November 23, 2026, for the two open ledger rows: an in-app sighting of Poppy behaviour in Muse, and a partner announcement in a partner&#x27;s own name. The same check will run the validator&#x27;s survey command against the first live company poppy.json it can name, and publish the result with that date either way.</p>
+
+          <h2>Sources</h2>
+          <ul>
+            <li>Personal Agent Protocol specification, version 1.0, personalagentprotocol.org/docs/1.0/spec. Read in full on November 15, 2026. Section 3: poppy.json at /.well-known/poppy.json over HTTPS, no file means not part of the protocol, only what a document declares can be relied on, and discovery through RFC 9728 protected resource metadata and RFC 8414 issuer metadata. Section 3.1 field table: protocol_version and organization required, at least one of agent, apis, or web, auth.issuer conditional, and the optional fields and forms printed in this post, including scopes as descriptions keyed by scope name and scope_hints with changes and personal_data. Section 3.3: extensions keyed by name with an entry for each version. Section 3.4: supported_versions as a map to each version&#x27;s document, on the same host, with the same domain and issuer. The complete Example Company document in section 3, used for the validator run. Sections 4 to 6 and 11 as cited: OAuth 2.0 with PKCE, the Poppy-Session JWT header, ES256 baseline and PS384 recommended, and the instruction that a company must not trust a personal agent.</li>
+            <li>Personal Agent Protocol guides, personalagentprotocol.org/docs/1.0/guides, and the company implementation kit, personalagentprotocol.org/kit/company. Read on November 15, 2026. Guides: each capability is a separate choice, start with the website, then add the agent, the APIs, and the sign-in; a web-only poppy.json is the cheapest path where the website already supports sign-in. Kit: the four milestones (Foundation, Interfaces, Sign-in, Extensions), run the validator after each milestone, and a kit for personal agents not yet published.</li>
+            <li>Poppy Company validator, README and program, github.com/personal-agent-protocol/personal-agent-protocol, skills/implement-personal-agent-protocol/validate. Read and run on November 15, 2026. README: commands survey, check, keygen, and report; checks grouped by milestone as printed in this post; exit codes 0, 1, and 2; Node 22.18 or later, no dependencies; safety limits including no token, no sign-in, no browser join, at most 400 requests, and a preference for test environments. Run by this site, November 15, 2026: check in offline --file mode against the specification&#x27;s Example Company document, Foundation result 7 passed, 0 failed, 0 warnings, 7 skipped, the skipped checks being the network ones.</li>
+            <li>Personal Agent Protocol extensions pages and roadmap, personalagentprotocol.org/docs/1.0/extensions and /docs/roadmap. Read on November 15, 2026. Six 1.0 extensions: ucp, operations, links, disclosures, browser-control, and mediated-sign-in. UCP page: UCP is a protocol for checkout, not a payment method. Mediated Sign-In page: retiring, stops working March 17, 2027. Roadmap: signed approvals, self-hosted personal agents, dropping Mediated Sign-In, and payments.</li>
+            <li>Sierra, &quot;Releasing Personal Agent Protocol 1.0,&quot; November 13, 2026, by Bret Taylor and Clay Bavor. Re-read in full on November 15, 2026. The starting point for this post only: Poppy now on for everyone who uses Muse, Muse looking for Poppy first, Shopify enabled for every merchant, Mercury, Synchrony, and Turkish Airlines going live, more than 100 design partners, and an implementation kit with a validator at personalagentprotocol.org.</li>
+            <li>Muse blog, &quot;More Ways for Muse to Work With Businesses,&quot; muse.ai/blog/poppy-personal-agent-protocol. Read in full on November 14, 2026 for Part 1, and carried at that weight here; a fresh fetch on November 15, 2026 did not return the page. Muse as the first personal agent to support Poppy, poppy.json named as the file a business publishes, website-only setup without customer sign-in, OAuth grant and revoke on the business&#x27;s own page, and Meta verified connectors as a separate review track.</li>
+            <li>DuckDuckGo checks, November 15, 2026, run for this post. Queries on a Meta primary beyond the Muse blog post, an in-app sighting of Poppy behaviour, and partner announcements from Mercury, Synchrony, Turkish Airlines, and Shopify in their own names, plus site searches for the kit and validator. None of the three follow-through items was found. The protocol demo addresses (the demo agent site, its /.well-known/poppy.json, and the protocol inspector) returned Not Found on November 15, 2026. One Gate.com result dated November 15 was not opened past a compliance page and is carried as an unverified snippet only.</li>
+            <li>Baseline check: this site&#x27;s September 2026 research file contains no Poppy material, because the protocol was first announced in October 2026. Nothing in this post rests on the baseline file.</li>
+            <li>Editorial checks, November 15, 2026: standing facts held flat from this site&#x27;s November record. Expedia in Muse hotels only, per Skift, November 9, with flights not verified. Spaces sharing described by Meta on November 6 as exploring ways to share, not live. Muse calling businesses is paid and US only, per this site&#x27;s November 14 post.</li>
+          </ul>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../muse-looks-for-poppy-first-sierra-poppy-1-0/">&#8592; Muse Looks for Poppy First Now: Sierra Poppy 1.0, Shopify, and the 100+ Partners, Checked on Sierra&#x27;s Own Post</a>
+            <a class="next" href="../">The Guide &#8594;</a>
+          </nav>
+        </article>
+<section class="comments-section" style="max-width:44rem;margin:2.5rem auto;padding:0 1rem;">
+<h2>Comments</h2>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
+<div id="fastcomments-widget"></div>
+<script>
+window.fcConfigs = [{
+    "tenantId": "GfnpP225c2I2"
+}];
+</script>
+</section>
+      </div>
+    </section>
+
+<section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
+    </div>
+  </footer>
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9f51b72e2e74d26a96ec4c925913152"}'></script><!-- End Cloudflare Web Analytics --></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
