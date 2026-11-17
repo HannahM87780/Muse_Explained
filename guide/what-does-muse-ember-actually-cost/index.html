@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Meta&#x27;s own pricing page settles the Ember fight. The base price is $0.10 per million input tokens and $0.50 per million output tokens, and the $0.30 figure is not a rival base price. It is the long-context input rate that applies once a request passes 200,000 input tokens, at which point the whole request bills at triple rates. No source checked on November 16 supports a 20,000 token threshold or a $1.20 output price." />
+  <link rel="canonical" href="https://museexplained.com/guide/what-does-muse-ember-actually-cost/" />
+  <link rel="icon" href="data:," />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What Does Muse Ember Actually Cost? Settling the $0.10, $0.30 and $0.50 Pricing Fight on a Primary Page — Muse Explained" />
+  <meta property="og:description" content="Meta&#x27;s own pricing page settles the Ember fight. The base price is $0.10 per million input tokens and $0.50 per million output tokens, and the $0.30 figure is not a rival base price. It is the long-context input rate that applies once a request passes 200,000 input tokens, at which point the whole request bills at triple rates. No source checked on November 16 supports a 20,000 token threshold or a $1.20 output price." />
+  <meta property="og:url" content="https://museexplained.com/guide/what-does-muse-ember-actually-cost/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <title>What Does Muse Ember Actually Cost? Settling the $0.10, $0.30 and $0.50 Pricing Fight on a Primary Page — Muse Explained</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Does Muse Ember Actually Cost? Settling the $0.10, $0.30 and $0.50 Pricing Fight on a Primary Page",
+  "author": {
+    "@type": "Person",
+    "name": "Marvin Jones"
+  },
+  "datePublished": "2026-11-17",
+  "dateModified": "2026-11-17",
+  "description": "Meta's own pricing page settles the Ember fight. The base price is $0.10 per million input tokens and $0.50 per million output tokens, and the $0.30 figure is not a rival base price. It is the long-context input rate that applies once a request passes 200,000 input tokens, at which point the whole request bills at triple rates. No source checked on November 16 supports a 20,000 token threshold or a $1.20 output price."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Muse Ember cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Meta's own pricing page, read November 16, 2026: $0.10 per million input tokens, $0.004 per million cached input tokens, and $0.50 per million output tokens, for a request with up to 200,000 input tokens."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the $0.30 Ember price in some listings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is Meta's long-context input rate, not a second base price. Past 200,000 input tokens in a request, input rises to $0.30 per million, cached input to $0.012, and output to $1.50, and the higher rates apply to the whole request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the tier threshold 20,000 or 200,000 tokens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "200,000, on Meta's pricing page. No page read in full on November 16, 2026 contains a 20,000 token threshold for Ember. Every full-read tier reference is 200,000."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Ember output $1.20 per million anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No source checked in full on November 16 supports $1.20. Meta lists output at $0.50 base and $1.50 long-context. OpenRouter and Vercel list $0.50. Poe lists $0.51. The $1.20 figure rests on a November 14 snippet that OpenRouter's own page does not back."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do OpenRouter and Vercel charge the long-context tier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Their pages do not say. Both list only the base rates, $0.10 input and $0.50 output per million, with no tier shown, in full reads on November 16, 2026. This site rechecks on November 23, 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Poe charge $0.51 for output?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Poe's page states the figure, in points, and gives no reason. It is one cent above the $0.50 on Meta, OpenRouter, and Vercel. This site has no Poe statement explaining the difference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Is Ember priced per token or per task?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per token, on Meta's pricing page: input, cached input, and output are each priced per million tokens, in two tiers set by the input size of the request. The $0.14 per task figure in coverage is Artificial Analysis's measured average cost per finished task from its November 9, 2026 article. It is a test result, not a price Meta charges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Do cached tokens push a request into the higher tier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, on Meta's wording. The input tokens in a request set the tier, cached tokens included. Cached tokens bill at the cached rate, $0.004 per million at base tier and $0.012 in the long-context tier, but they count toward the 200,000 token line."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: If my request is 1,000 tokens over the line, do I pay the higher rate only on those 1,000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Meta's page states that a request over 200K input tokens is billed at the long-context rates in full, not only for the tokens past 200K. The worked example in this post shows a 201,000 token request costing about three times the same request at 200,000 tokens, on list rates with no cache."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Does a long conversation cross the tier by itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can, on Meta's page. When a request continues a stored conversation through previous_response_id, its input includes that conversation. The accumulated history counts as input for tier purposes, so a growing conversation can cross 200,000 input tokens without a single long message."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Is Ember available on Oracle Cloud, and what does Oracle charge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta's November 9, 2026 post says Ember, Spark and Wonder are available on Google Cloud and Oracle Cloud. No Oracle Ember pricing page or per-token figure was found in the November 16, 2026 checks, and Oracle's own pretrained models page listed no Muse model when this site checked it on November 10. The availability claim is Meta's. An Oracle price, in Oracle's name, does not exist in this record yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: Does Ember's price change the Muse subscription plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No connection is stated anywhere checked. Ember is priced per token for developers on Muse Code and the Meta Model API. Muse subscriptions for the personal agent, Free, Power at $20 a month, and Maximum at $100 a month, sit in a separate pricing record that this site's pricing guide covers, last checked September 18, 2026 in that guide."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="../../" aria-label="Muse Explained home">Muse Explained</a>
+      <span class="independent">An independent publication</span>
+      <nav aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a href="../">The Guide</a>
+        <a href="../../#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <figure style="margin:0;line-height:0;">
+    <img src="../../assets/max-blog-header.jpg" alt="Max, the writer behind Muse Explained, at his desk with a laptop and a cup of coffee" width="1920" height="720" style="display:block;width:100%;height:auto;" />
+  </figure>
+
+  <main id="content">
+    <div class="page-hero">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../">The Guide</a><span class="sep">/</span>Pricing</p>
+        <h1>What Does Muse Ember Actually Cost? Settling the $0.10, $0.30 and $0.50 Pricing Fight on a Primary Page</h1>
+        <p class="lede">Meta&#x27;s own pricing page settles the Ember fight. The base price is $0.10 per million input tokens and $0.50 per million output tokens, and the $0.30 figure is not a rival base price. It is the long-context input rate that applies once a request passes 200,000 input tokens, at which point the whole request bills at triple rates. No source checked on November 16 supports a 20,000 token threshold or a $1.20 output price.</p>
+        <p class="byline">By Marvin Jones</p>
+        <p class="updated">Last checked against the live product: November 16, 2026.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="article">
+
+          <h2>Price Check: Muse Ember</h2>
+          <div class="callout field-note">
+            <span class="label">Price Check: Muse Ember</span>
+            <p>A standing box for the Ember price, placed here so the dated answer sits next to the headline. Last updated November 16, 2026, from Meta&#x27;s Model API pricing page, read in full that day, and the provider listings listed in Sources.</p>
+            <ul>
+              <li>Input price, checked November 16, 2026 on a primary: $0.10 per million input tokens for a request with up to 200,000 input tokens. Cached input is $0.004 per million. Source: Meta, dev.meta.ai/docs/pricing-rate-limits, model muse-ember-1.0, Standard mode.</li>
+              <li>Output price, checked November 16, 2026 on a primary: $0.50 per million output tokens at the same tier. No primary or provider page checked that day supports $1.20 as an output price.</li>
+              <li>Tier threshold, checked November 16, 2026 on a primary: 200,000 input tokens, not 20,000. Past that line the rates triple to $0.30 input, $0.012 cached input, and $1.50 output per million, and the higher rates apply to the whole request, not only to the tokens past 200,000.</li>
+              <li>Promise Ledger rows still open, recheck dated November 23, 2026: whether OpenRouter and Vercel charge the long-context tier their pages do not display, why Poe lists output at $0.51 instead of $0.50, and whether Oracle publishes a per-token Ember price in its own name. The launch claim this ledger opened with, $0.10 per million input tokens on November 9, is confirmed at base tier and incomplete as a full price, because it omits the tier.</li>
+            </ul>
+          </div>
+
+          <h2>What Meta&#x27;s pricing page actually says</h2>
+          <p>The page is titled &quot;Pricing and rate limits&quot; on Meta&#x27;s developer site, and it gives Ember one row set with two columns. The first column covers a request with up to 200K input tokens: input $0.10 per million, cached input $0.004 per million, output $0.50 per million. The second column covers a request with more than 200K input tokens: input $0.30 per million, cached input $0.012 per million, output $1.50 per million. Every rate in the second column is exactly three times the first. The model name on the page is muse-ember-1.0, and the page notes that Contributor mode is not available for Muse Ember, Standard mode only.</p>
+          <p>Two details in Meta&#x27;s wording change how a bill actually lands, and both are easy to miss in a snippet. First, the input tokens in a request set the tier, cached tokens included. A request does not stay cheap because most of its prompt came from cache: the cached tokens still count toward the 200,000 line, even though they bill at the cached rate. Second, when a request continues a stored conversation through previous_response_id, its input includes that conversation. A chat that grows turn by turn can cross into the long-context tier on accumulated history, not on anything new the user typed.</p>
+          <p>The sharpest sentence on the page is the billing rule for the crossing itself. A request with more than 200K input tokens is billed at the long-context rates in full, not only for the tokens past 200K. There is no blended bill, part at the base rate and part at the higher one. One token over the line reprices the entire request.</p>
+          <p>Meta&#x27;s page also lists Ember rate limits, 3,000 requests per minute and 4,000,000 tokens per minute, and a web search grounding price of $2.50 per 1,000 search queries. The page shows no date. The model release date, November 9, 2026, comes from the provider listings below.</p>
+
+          <h2>The arithmetic of one token over</h2>
+          <p>Run the numbers on Meta&#x27;s rates and the cliff is visible in cents. A request with 200,000 input tokens and 10,000 output tokens costs $0.020 in input and $0.005 in output, $0.025 in total. Add 1,000 input tokens, taking the request to 201,000, and the whole request moves tier: input costs $0.0603 at the $0.30 rate, output costs $0.015 at the $1.50 rate, $0.0753 in total. The extra 1,000 tokens tripled the bill.</p>
+          <p>That worked example uses list rates only, with no cached input, because cache changes the per-token charge without changing the tier rule. A mostly cached 201,000 token request pays the cached rate on the cached share, at the long-context cached price of $0.012 per million. It does not return to the base tier. Cache lowers the rate. It does not lower the tier.</p>
+          <div class="callout field-note">
+            <span class="label">Field note</span>
+            <p>The snippet fight makes sense once the tier is on the page. A page that quotes the long-context column reads as $0.30 input. A page that quotes the base column reads as $0.10 input and $0.50 output. Both pages can be copying real numbers and still disagree, because neither snippet said which column it took. The $0.30 against $0.50 argument that ran through this site&#x27;s November 14 to 16 sweeps was two columns of one table being read as two competing prices.</p>
+          </div>
+
+          <h2>Which snippet figures no primary supports</h2>
+          <p>Two figures in circulation get no support from any full read run on November 16, 2026, and this post names them so they stop travelling.</p>
+          <p>The 20,000 token threshold appears in repeated November 16 snippets in this site&#x27;s demand-log sweeps. No full page read that day contains it: not Meta&#x27;s pricing page, not OpenRouter, not Vercel, not Poe, and not the Zeniteq secondary that first printed the tier. Every tier reference in a full read is 200,000 tokens. Twenty thousand reads like a dropped zero that copied well.</p>
+          <p>The $1.20 output figure comes from an OpenRouter snippet dated November 14 in this site&#x27;s record. OpenRouter&#x27;s own page, read in full on November 16, lists output at $0.50 per million from both of its Ember providers. No page read in full that day lists $1.20 for Ember output at any tier: the long-context output rate on Meta&#x27;s page is $1.50, and the base rate is $0.50. A figure can sit between two real figures and still be supported by neither.</p>
+
+          <h2>The provider listings, printed separately</h2>
+          <p>Providers do not all show the same price page, and merging them into one Ember price would hide the two findings in this section: no provider page checked displays the long-context tier, and one provider charges a cent more for output.</p>
+          <p>OpenRouter, read in full on November 16, 2026, lists Muse Ember at a November 9, 2026 release with a 1.0M token context. It names two providers, Meta and Google Vertex, and both list the same rates: input $0.10 per million, output $0.50 per million, cache read $0.004 per million. The page also shows a weighted average actually paid, lower on input at $0.02259 per million, which reflects cached traffic in the mix rather than a different list price. A search of the page for the tier found no match: OpenRouter&#x27;s page shows no 200,000 token threshold and no long-context rates. Whether a long request through OpenRouter bills at Meta&#x27;s triple rates is not stated on the page. That is an open ledger row above, with a recheck date, not a gap this post fills by guessing.</p>
+          <p>Vercel AI Gateway, read in full on November 16, lists input $0.10, output $0.50, and cache read $0.004 per million, with Meta as the only provider in its table, a 1M context, and a release date of November 9, 2026. Its page also shows no long-context tier. Netlify&#x27;s changelog of November 9, 2026, read in full the same day, confirms Ember 1.0 live in its AI Gateway alongside Muse Spark and Muse Wonder, and lists no per-token price at all. A developer comparing gateways on price pages alone would see one price everywhere and no tier anywhere, which is a different picture from Meta&#x27;s own page.</p>
+          <p>Poe is the outlier. Poe&#x27;s Muse Ember page was read in full on November 16, with its rates view opened. It prices input at $0.10 per million tokens and text output at $0.51 per million tokens. The charge is in points: 4 points per 1,000 input tokens and 17 points per 1,000 output tokens. The output figure is $0.51, not the $0.50 every other listing shows. Poe states a 96 percent discount on cached chat and gives no dollar cached rate. Poe shows no tier either, and its message cost varies by length. One cent per million output tokens will not change many bills. It still belongs in print. A reader who checks Poe against this post will find the difference, and this site does not have an explanation for it yet. Poe may round its points conversion up, or price output on its own margin. Poe&#x27;s page does not say which.</p>
+          <div class="callout caution">
+            <span class="label">Caution</span>
+            <p>Oracle has no Ember pricing page in this check. Meta&#x27;s November 9 post, read in full for this site on November 10, says Ember, Spark and Wonder are available on Google Cloud and Oracle Cloud. A DuckDuckGo search for an Oracle Ember price on November 16 returned no Oracle pricing page and no Oracle per-token figure, only a snippet from a secondary roundup naming Oracle Cloud and Google Cloud as hosts. Oracle&#x27;s own pretrained models page, checked November 10 for this site, listed no Muse model. Availability stated by Meta and a price published by Oracle are two different records, and only the first one exists today. Cloudflare is in the same position in this run. An earlier site check on November 10 read a Cloudflare Ember model page at $0.10 and $0.50. The November 16 search returned no Cloudflare listing to re-read. That figure stands at its November 10 date and is not refreshed here.</p>
+          </div>
+
+          <h2>What the Artificial Analysis number is, and is not</h2>
+          <p>Artificial Analysis, in its article of November 9, 2026, read in full for this site&#x27;s November 11 post, scored Ember 36 on its Intelligence Index and put its cost at $0.14 per task, using $0.10 and $0.50 per million input and output tokens. That $0.14 is a measured cost per finished task at max reasoning. It is not a per-token price, and it settles nothing about the tier, because a per-task average can sit under the base rates while individual long requests bill at triple. Readers who saw $0.14 quoted as evidence that Ember is simply cheap were reading a different measurement. This post is only about the per-token price and its tier, which is the bill a developer can predict before running anything.</p>
+          <p>The September 2026 baseline research this site works from predates Ember entirely, so it offers no help on this price. Every figure above comes from a page read in full on November 16, 2026, or from an earlier full read dated where it is used.</p>
+
+          <h2>What Ember pricing is not</h2>
+          <p>Ember is a developer model, sold by the token on Muse Code and the Meta Model API. Its price is not the Muse subscription. The consumer plans this site covers in its pricing guide, Free, Power at $20 a month, and Maximum at $100 a month, are a separate record, and nothing on Meta&#x27;s Ember pricing page changes them. No consumer Muse app rollout for Ember was stated in the November 9 announcement, and none is stated on the pricing page read November 16.</p>
+          <p>Three standing records hold flat beside this settlement. Muse calling businesses is paid and US only on this site&#x27;s November 14 record. Poppy is Sierra&#x27;s third-party protocol, not a Meta model, and its November 15 post changes nothing about Ember&#x27;s price. Expedia in Muse is still hotels only, with flights not verified. A settled Ember price moves none of those rows.</p>
+
+          <h2>Next check, and the question for readers</h2>
+          <p>The open rows are the provider rows: the missing long-context tier on the OpenRouter and Vercel pages, Poe&#x27;s extra cent on output, and an Oracle price in Oracle&#x27;s own name. This site will recheck those rows on November 23, 2026, and will date the result either way.</p>
+          <p>The reader question for this post comes from the cliff in the arithmetic section. If you route work through Ember, does a price that triples past a token threshold change what you would send it, and what task would you move first? Answers that name the task and its usual prompt size will shape the November 23 recheck, because a workload of short calls never meets the tier and a document workload lives past it.</p>
+
+          <h2>Quick answers</h2>
+          <div class="faq-list">
+            <details>
+              <summary>What does Muse Ember cost?</summary>
+              <p>On Meta&#x27;s own pricing page, read November 16, 2026: $0.10 per million input tokens, $0.004 per million cached input tokens, and $0.50 per million output tokens, for a request with up to 200,000 input tokens.</p>
+            </details>
+            <details>
+              <summary>What is the $0.30 Ember price in some listings?</summary>
+              <p>It is Meta&#x27;s long-context input rate, not a second base price. Past 200,000 input tokens in a request, input rises to $0.30 per million, cached input to $0.012, and output to $1.50, and the higher rates apply to the whole request.</p>
+            </details>
+            <details>
+              <summary>Is the tier threshold 20,000 or 200,000 tokens?</summary>
+              <p>200,000, on Meta&#x27;s pricing page. No page read in full on November 16, 2026 contains a 20,000 token threshold for Ember. Every full-read tier reference is 200,000.</p>
+            </details>
+            <details>
+              <summary>Is Ember output $1.20 per million anywhere?</summary>
+              <p>No source checked in full on November 16 supports $1.20. Meta lists output at $0.50 base and $1.50 long-context. OpenRouter and Vercel list $0.50. Poe lists $0.51. The $1.20 figure rests on a November 14 snippet that OpenRouter&#x27;s own page does not back.</p>
+            </details>
+            <details>
+              <summary>Do OpenRouter and Vercel charge the long-context tier?</summary>
+              <p>Their pages do not say. Both list only the base rates, $0.10 input and $0.50 output per million, with no tier shown, in full reads on November 16, 2026. This site rechecks on November 23, 2026.</p>
+            </details>
+            <details>
+              <summary>Why does Poe charge $0.51 for output?</summary>
+              <p>Poe&#x27;s page states the figure, in points, and gives no reason. It is one cent above the $0.50 on Meta, OpenRouter, and Vercel. This site has no Poe statement explaining the difference.</p>
+            </details>
+          </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Q: Is Ember priced per token or per task?</strong></p>
+          <p>A: Per token, on Meta&#x27;s pricing page: input, cached input, and output are each priced per million tokens, in two tiers set by the input size of the request. The $0.14 per task figure in coverage is Artificial Analysis&#x27;s measured average cost per finished task from its November 9, 2026 article. It is a test result, not a price Meta charges.</p>
+          <p><strong>Q: Do cached tokens push a request into the higher tier?</strong></p>
+          <p>A: Yes, on Meta&#x27;s wording. The input tokens in a request set the tier, cached tokens included. Cached tokens bill at the cached rate, $0.004 per million at base tier and $0.012 in the long-context tier, but they count toward the 200,000 token line.</p>
+          <p><strong>Q: If my request is 1,000 tokens over the line, do I pay the higher rate only on those 1,000?</strong></p>
+          <p>A: No. Meta&#x27;s page states that a request over 200K input tokens is billed at the long-context rates in full, not only for the tokens past 200K. The worked example in this post shows a 201,000 token request costing about three times the same request at 200,000 tokens, on list rates with no cache.</p>
+          <p><strong>Q: Does a long conversation cross the tier by itself?</strong></p>
+          <p>A: It can, on Meta&#x27;s page. When a request continues a stored conversation through previous_response_id, its input includes that conversation. The accumulated history counts as input for tier purposes, so a growing conversation can cross 200,000 input tokens without a single long message.</p>
+          <p><strong>Q: Is Ember available on Oracle Cloud, and what does Oracle charge?</strong></p>
+          <p>A: Meta&#x27;s November 9, 2026 post says Ember, Spark and Wonder are available on Google Cloud and Oracle Cloud. No Oracle Ember pricing page or per-token figure was found in the November 16, 2026 checks, and Oracle&#x27;s own pretrained models page listed no Muse model when this site checked it on November 10. The availability claim is Meta&#x27;s. An Oracle price, in Oracle&#x27;s name, does not exist in this record yet.</p>
+          <p><strong>Q: Does Ember&#x27;s price change the Muse subscription plans?</strong></p>
+          <p>A: No connection is stated anywhere checked. Ember is priced per token for developers on Muse Code and the Meta Model API. Muse subscriptions for the personal agent, Free, Power at $20 a month, and Maximum at $100 a month, sit in a separate pricing record that this site&#x27;s pricing guide covers, last checked September 18, 2026 in that guide.</p>
+
+          <h2>Sources</h2>
+          <ul>
+            <li>Meta, Model API &quot;Pricing and rate limits,&quot; dev.meta.ai/docs/pricing-rate-limits. Read in full on November 16, 2026. Model muse-ember-1.0, Standard mode only, Contributor mode not available for Muse Ember. Up to 200K input tokens: input $0.10, cached input $0.004, output $0.50 per million tokens. Over 200K input tokens: input $0.30, cached input $0.012, output $1.50 per million. Input tokens set the tier, cached tokens included; a request continuing a stored conversation through previous_response_id includes that conversation in its input; a request over the line bills at the long-context rates in full, not only on tokens past 200K. Rate limits 3,000 requests per minute and 4,000,000 tokens per minute. Web search grounding $2.50 per 1,000 search queries. No date shown on the page.</li>
+            <li>Meta, &quot;Introducing Our Smallest, Most Efficient Model: Muse Ember,&quot; research.meta.ai, November 9, 2026. Read in full for this site on November 10, 2026, per the news-watch record of that date: Ember as muse-ember-1.0 on Muse Code and the Meta Model API at the base rates, with Google Cloud and Oracle Cloud availability stated for Ember, Spark and Wonder. A fresh fetch of this page was blocked on November 16, so its figures here are used at their November 10 full-read weight and the settlement itself rests on the developer pricing page above, read November 16.</li>
+            <li>OpenRouter, Muse Ember model page, openrouter.ai/meta/muse-ember. Read in full on November 16, 2026. Released November 9, 2026, 1.0M context. Two providers, Meta and Google Vertex, each listing input $0.10, output $0.50, cache read $0.004 per million tokens. Weighted average actually paid shown as input $0.02259 and output $0.4998 per million. No long-context tier shown on the page.</li>
+            <li>Vercel AI Gateway, Muse Ember model page, vercel.com/ai-gateway/models/muse-ember. Read in full on November 16, 2026. Input $0.10, output $0.50, cache read $0.004 per million tokens, Meta as provider, 1M context, release November 9, 2026. No long-context tier shown.</li>
+            <li>Poe, Muse Ember page and rates view, poe.com/Muse-Ember. Read in full on November 16, 2026. Input $0.10 per million tokens at 4 points per 1,000 tokens, text output $0.51 per million at 17 points per 1,000 tokens, 96 percent discount on cached chat with no dollar cached rate stated, no tier shown, no date shown.</li>
+            <li>Netlify, changelog, &quot;Meta Muse Ember AI Gateway,&quot; November 9, 2026. Read in full on November 16, 2026. Ember 1.0 live in Netlify AI Gateway alongside Muse Spark and Muse Wonder. No per-token price listed.</li>
+            <li>Zeniteq, &quot;Meta Releases Muse Ember for Low-Cost AI Agent Work,&quot; November 15, 2026, by Jim Clyde Monge. Read in full on November 16, 2026. Secondary source printing the tier at up to 200K tokens, $0.10 input and $0.50 output per million, and above 200K, $0.30 and $1.50, citing Meta&#x27;s announcement, developer announcement, and model documentation. Its tier figures match Meta&#x27;s pricing page; its cached rates are absent, and this post takes the settlement from Meta&#x27;s page, not from Zeniteq.</li>
+            <li>CloudPrice, Muse Ember aggregator page, cloudprice.net/models/meta-muse-ember, data updated November 16, 2026. Read in full that day. Lists OpenRouter and Vercel AI Gateway only, each at input $0.10, output $0.50, cache read $0.004 per million tokens, with no tier shown. Used as a cross-check on the two provider pages, not as a price source of its own.</li>
+            <li>Artificial Analysis, &quot;Meta&#x27;s Muse Ember is the cheapest model scoring 36 on the Intelligence Index,&quot; November 9, 2026. Read in full for this site on November 10, 2026, and used in the November 11 post: Ember scored 36 at $0.14 per task, on $0.10 and $0.50 per million input and output tokens. Cited here to separate a measured per-task cost from a per-token price.</li>
+            <li>DuckDuckGo checks, November 16, 2026, run for this post. Five assigned queries on Ember pricing in general, OpenRouter, Poe, Vercel AI Gateway, and Oracle, plus follow-up queries for Zeniteq, Cloudflare, and Netlify. The Oracle query returned no Oracle pricing page and no Oracle per-token price. The Cloudflare query returned no Cloudflare provider listing to re-read. No 20,000 token threshold was found in any full page or snippet returned.</li>
+          </ul>
+
+          <nav class="pager" aria-label="Page navigation">
+            <a href="../inside-poppy-json-what-a-business-publishes-poppy-1-0/">&#8592; Inside poppy.json: What a Business Actually Publishes for Poppy 1.0, Checked on personalagentprotocol.org and the Validator Itself</a>
+            <a class="next" href="../">The Guide &#8594;</a>
+          </nav>
+        </article>
+<section class="comments-section" style="max-width:44rem;margin:2.5rem auto;padding:0 1rem;">
+<h2>Comments</h2>
+<script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
+<div id="fastcomments-widget"></div>
+<script>
+window.fcConfigs = [{
+    "tenantId": "GfnpP225c2I2"
+}];
+</script>
+</section>
+      </div>
+    </section>
+
+<section class="section signup-band slim" aria-labelledby="signup-title">
+      <div class="wrap signup-grid">
+        <div>
+          <h2 id="signup-title">Get the field notes.</h2>
+          <p>New guides and teardowns, sent when there’s something worth sharing. No spam.</p>
+        </div>
+        <form class="signup-form" id="signup-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="field-row">
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="form-note form-status" />
+            <button type="submit">Check my email</button>
+          </div>
+          <p class="form-note" id="form-note">Signup preview only — email delivery opens at launch.</p>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="disclaimer">Muse Explained is an independent publication. It is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc. ‘Muse’ is a trademark of Meta Platforms, Inc.</p>
+        <div class="footer-links"><a href="../../">Home</a><a href="../">The Guide</a><a href="../../#about">About</a></div>
+      </div>
+      <p class="copyright">&copy; 2026 Muse Explained</p>
+    </div>
+  </footer>
+  <script>
+    const form = document.getElementById('signup-form');
+    const email = document.getElementById('email');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.checkValidity()) {
+        status.textContent = 'Enter a valid email address.';
+        email.focus();
+        return;
+      }
+      status.textContent = 'Email looks good. Signup opens when the first issue launches.';
+    });
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9f51b72e2e74d26a96ec4c925913152"}'></script><!-- End Cloudflare Web Analytics --></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
